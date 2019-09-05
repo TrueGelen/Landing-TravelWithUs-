@@ -1,0 +1,573 @@
+@import '_normalize';
+@import '_vars';
+@import '_fonts';
+@import 'smart-grid';
+
+//---------common styles ----------------------
+
+h1, h2, h3, h4, p {
+	padding: 0px;
+	margin: 0px;
+}
+
+//---------for any project --------------------
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.container{
+	position: relative;
+	padding: 0px 15px;
+	max-width: 1165px;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid red;
+}
+
+//---------pageUp ----------------------
+
+.pageUp {
+	display: none;
+	position: fixed;
+	width: 70px;
+	height: 50px;
+	background: #9428D6FF;
+	opacity: 0.4;
+	z-index: 10;
+	right: 0;
+	bottom: 0;
+	margin: 0px 30px 30px 0px;
+	border-radius: 10px;
+	font-size: 46px;
+	font-weight: 700;
+	text-align: center;
+	line-height: 66px;
+	cursor: pointer;
+	transition: opacity .2s, color .2s;
+
+	&:hover {
+		opacity: .7;
+		color: $btnColor;
+	}
+
+	&:active{
+		opacity: .4;
+	}
+}
+
+*{
+	box-sizing: border-box;
+}
+
+//---------Header ----------------------
+
+header {	
+	background: url(../imgs/backgroundHeader.png) no-repeat;
+	background-size: cover;
+	min-height: 698px;
+	position: relative;
+
+	&::after{
+	content: '';
+	display: block;
+	left: 0;
+	top: 0;
+	position: absolute;
+	min-height: 88px;
+	width: 100%;
+	opacity: 0.23;
+	background-color: #ffffff;
+
+	@include md(background-color, #9fcef573)
+	}
+}
+
+.navWrapper{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	min-height: 88px;
+	align-items: center;
+	z-index: 2;
+}
+
+.logoNavWrap{
+	@extend .navWrapper;
+	flex-basis:61%;
+
+	@include lg(flex-basis, 71%)
+}
+
+.logo{
+	margin-bottom: 3px;
+	font-size: 29px;
+	font-family: "Bringin";
+	color: $btnColor;
+	text-decoration: none;
+
+	p{	
+		display: inline;
+		margin: 0;
+		padding: 0;
+		color: $secondColor;
+	}		
+}
+
+.nav{
+
+	@include md(display, none)
+
+	&Link{
+		position: relative;
+		display: inline-block;
+		margin-right: 10px;
+		font-family: "OpenSans-Bold";
+		font-size: 14px;
+		color: $secondColor;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover{
+			&::after{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: -10px;
+				width: 100%;
+				height: 2px;
+				background: $btnColor;
+			}
+		}
+	}
+}
+
+.navMob{
+	position: absolute;
+	display: none;	
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	width: 90px;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 3;
+
+	@include md(display, flex)
+
+	&:hover{
+		cursor: pointer;
+	}
+
+	&_Txt{
+		font-family: "OpenSans-Bold";
+		font-size: 18px;
+		text-transform: uppercase;
+		color: $secondColor;
+	}
+
+	&_lines{
+		align-self: stretch;
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
+		&_li{
+			display: inline-block;
+			border-radius: 25%;
+			width: 25px;
+			height: 3px;
+			background:$btnColor;
+		}
+	}	
+}
+
+.callBtn{
+	padding: 12px 38px;
+	border-radius: 4px;
+	border: solid 3px $btnColor;
+	color: $btnColor;		
+	font-family: "Raleway-Bold";
+	font-size: 14px;
+	letter-spacing: 1.92px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: box-shadow .1s, color 0.1s;
+
+	@include xs(padding, 12px 25px)
+
+	&:hover{
+		box-shadow: 0px 0px 3px 1px $btnColor;
+	}
+
+	&:active{
+		box-shadow: 0px 0px 0px 0px $btnColor;
+		color: $secondColor;
+	}
+}
+
+.headerTitleWrapper{
+	margin-top: 100px;
+	border: 3px solid white;
+	padding: 100px 0px 60px 30px;
+
+	@include lge(width, 800px);
+	@include lg(width, 100%);
+	@include xs(padding, 40px 30px 40px 30px);
+
+	.headerTitle{
+		font-family: "OpenSans-Bold";
+		font-size: 50px;
+		letter-spacing:6px;
+		color: white;
+		text-transform: uppercase;
+
+		@include xs(font-size, 40px);
+	}
+
+	.headerTitleExt {
+		font-family: "Bringin";
+		font-size: 66px;
+		line-height: 0.26;
+		letter-spacing: 1.32px;
+		color: $btnColor;
+
+		@include xs(font-size, 56px);
+		@include xs(line-height, 1);
+	}
+
+	.headerP{
+		margin: 32px 0px 0px 0px;
+		width: 434px;
+		opacity: 0.75;
+		font-family: "OpenSans-Regular";
+		font-size: 18px;
+		line-height: 1.61;
+		color: rgba(255, 255, 255, 0.75);
+		
+		@include xs(font-size, 16px);
+		@include xs(width, 100%);
+	}
+
+	.headerBtn{
+		display: inline-block;
+		margin: 30px 0px 0px 0px;
+		padding: 23px 73px;
+		border-radius: 4px;
+		box-shadow: 0 0 35px 0 rgba(3, 3, 3, 0.06);
+		background: $btnColor;
+		font-family: "Raleway-Bold";
+		font-size: 14px;
+		letter-spacing: 2.24px;
+		text-align: center;
+		color: #ffffff;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: background .2s;
+		
+		&:hover{
+			background: #0f8dcc;
+		}
+		
+		&:active{
+			background: $btnColor;
+		}
+	}
+}
+
+/* .headerBorder{
+	background: url(../imgs/HeaderBorder.png) no-repeat;
+	position: absolute;
+	display: none;
+	width: 100%;
+	min-height: 324px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-29.5%, -39%);
+} */
+
+
+//---------Section 2 ----------------------
+
+.section2{
+	position: relative;
+		height: 667px;
+		background-color: #f6f4f4;
+}
+
+.wrapForPoint{
+	overflow-y: hidden;
+}
+
+.containerForSec2{
+	position: relative;
+	padding: 0px 15px;
+	max-width: 1165px;
+	margin: 0 auto;
+
+	@include sec21440(overflow, hidden)
+}
+
+.sec2contentWrapper{
+	height: 667px;
+}
+
+.worldPoint{
+	position: absolute;
+	background: url(../imgs/Sec2WorldPoint.png) no-repeat;
+	margin-top: 20px;
+	margin-left: 85px;
+	width: 100%;
+	height: 667px;
+}
+
+.sec2BlockText{
+	margin-top: 250px;
+	margin-left: 5px;
+
+	@include md(margin-top, 380px);
+	@include sm(margin-left, 30px);
+	@include xs(margin-left, 0px);
+	@include xs(margin, 380px auto 0px auto);
+	
+	h2{
+		font-family: "OpenSans-Bold";
+		font-size: 20px;
+		letter-spacing: 2px;
+		color: #2c2e37;
+		text-transform: uppercase;
+	}
+
+	p{
+		margin-top: 20px;
+		width: 352px;
+		font-family: "OpenSans-Regular";
+		font-size: 14px;
+		line-height: 1.86;
+		color: #949494;
+		@include xs(width, 100%);
+	}
+
+	.btnReadMore{
+		display: inline-block;
+		margin-top: 25px;
+		padding: 13px 24px;
+		font-family: "OpenSans-Bold";
+		font-size: 12px;
+		letter-spacing: 1.44px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #ffffff;
+		border-radius: 4px;
+		background-color: $btnColor;
+	}
+}
+
+.sec2SmallPhoto{
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	left: 480px;
+	top: 280px;
+	z-index: 2;
+
+	@include sec21610(left, 400px);
+	@include sec21440(top, 330px);
+	@include sec21440(left, auto);
+	@include sec21440(right, 450px);
+	@include sec21440(width, 210px);
+	@include sec21440(height, 210px);
+	@include lg(right, 350px);
+	@include md(width, 280px);
+	@include md(height, 280px);
+	@include md(top, 360px);
+	@include md(right, 70px);
+	@include sm(display, none);
+}
+
+.sec2BigPhoto{
+	position: absolute;
+	width: 806px;
+	height: 570px;
+	left: 566px;
+	top: -40px;
+	z-index: 1;
+
+	@include sec21610(left, 480px);
+	@include sec21440(top, 60px);
+	@include sec21440(left, auto);
+	@include sec21440(right, 15px);
+	@include sec21440(width, 537px);
+	@include sec21440(height, 380px);
+	@include lg(top, 100px);
+	@include lg(height, 285px);
+	@include lg(width, 403px);
+	@include md(top, 50px);
+	@include sm(margin-right, 30px);
+	@include xs(right, auto);
+	@include xs(left, 50%);
+	@include xs(transform, translate(-50%));
+}
+
+
+//---------Section 3 ----------------------
+
+.sec3Title {
+	margin-top: 105px;
+  font-family: "OpenSans-Bold";
+  font-size: 30px;
+  letter-spacing: 3px;
+	color: #2c2e37;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.WrapJournal{
+	margin: 75px 0px 90px 0px;
+	display: flex;
+	box-shadow: 0px 0px 10px 1px #08537993;
+	width: 100%;
+
+	@include md(flex-wrap, wrap);
+	@include md(display, inline-block);
+	@include md(width, 83%);
+	@include md(margin, 75px 0px 90px 50%);
+	@include md(transform, translate(-50%));
+
+	@include sm(width, 98%);
+}
+
+.journalOrder{
+	order: 1;
+}
+
+.journalCart{
+	position: relative;
+	flex-basis: 378px;
+	height: 378px;
+}
+
+.journalPair{
+	flex-basis: 66.7%;
+	display: flex;
+	flex-direction: column;
+
+	@include md(flex-basis, 100%);
+
+	&_Single{
+		display: flex;
+	}
+}
+
+.journalSingle{
+	width: 33.3%;
+	display: flex;
+	flex-direction: column;
+
+
+	@include md(flex-direction, row);
+	@include md(width, 100%);
+}
+
+.journalPhoto{
+	@extend .journalCart;
+	overflow: hidden;
+}
+
+.journalDescrip{
+	@extend .journalCart;
+
+	&_Title {
+		margin-top: 43px;
+		font-family: "OpenSans-Bold";
+		font-size: 11px;
+		letter-spacing: 1.65px;
+		text-transform: uppercase;
+		text-align: center;
+		color:$btnColor;
+	}
+
+	&_subTitle {
+		margin: 50px auto 0px auto;
+		width: 90%;
+		font-family: "OpenSans-Bold";
+		font-size: 16px;
+		text-transform: uppercase;
+		letter-spacing: 2.4px;
+		line-height: 1.5;
+		text-align: center;
+		color: #212121;
+	}
+
+	&_p {
+		margin: 20px auto 0px auto;
+		width: 80%;
+		font-family: "OpenSans-Regular";
+		font-size: 14px;
+		line-height: 1.64;
+		text-align: center;
+		color: #777777;
+	}
+
+	&_n{
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		font-family: sans-serif;
+		font-size: 14px;
+		font-style: italic;
+		text-align: center;
+		color: #212121;
+	}
+}
+
+.icon-journal{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	fill: white;
+}
+
+.icon-heart{
+	width: 35px;
+	height: 35px;
+}
+
+.icon-leaf{
+	width: 81px;
+	height: 81px;
+}
+
+.icon-water{
+	width: 81px;
+	height: 81px;
+}
+
+.journalCircle{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border: 8px solid white;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	width: 81px;
+	height: 81px;
+}
+
+//---------Section 4 ----------------------
+
+.section4{
+	background: url(/source/imgs/Sec4Background.png) no-repeat;
+}
+
+.sec4_Wrap{
+	background: url(/source/imgs/Sec4TreesBackground.png) no-repeat;
+}
