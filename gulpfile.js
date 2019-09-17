@@ -25,7 +25,11 @@ gulp.task('concatCss', function () {
         .pipe(concat('styles.css'))
         .pipe(gcmq())
         .pipe(autoprefixer({
-            cascade: false
+            cascade: false,
+            overrideBrowserslist: [
+                "> 0.1%",
+                "ie 10"
+            ]
         }))
         .pipe(cleanCSS({ level: 2 }))
         .pipe(gulp.dest('./dist/css'));
@@ -107,6 +111,10 @@ var settings = {
         xs: {
             width: '560px',
             fields: '15px'
+        },
+        es: {
+            width: '420px',
+            fields: '10px'
         }
     }
 };
