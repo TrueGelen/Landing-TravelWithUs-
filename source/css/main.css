@@ -1551,20 +1551,9 @@ header::after {
 .WrapJournal {
   margin: 75px 0px 90px 0px;
   display: flex;
+  justify-content: space-between;
   box-shadow: 0px 0px 10px 1px #08537993;
   width: 100%;
-}
-
-@media screen and (max-width: 960px) {
-  .WrapJournal {
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .WrapJournal {
-    display: inline-block;
-  }
 }
 
 @media screen and (max-width: 960px) {
@@ -1604,38 +1593,12 @@ header::after {
 }
 
 .journalPair {
-  flex-basis: 66.7%;
+  flex-basis: 378px;
   display: flex;
   flex-direction: column;
+  max-width: 378px;
 }
 
-@media screen and (max-width: 960px) {
-  .journalPair {
-    flex-basis: 100%;
-  }
-}
-
-.journalPair_Single {
-  display: flex;
-}
-
-@media screen and (max-width: 560px) {
-  .journalPair_Single {
-    flex-direction: column;
-  }
-}
-
-/* //pair of journalPhoto and journalDescrip
-.journalSingle{
-	width: 33.3%;
-	display: flex;
-	flex-direction: column;
-
-	@include md(flex-direction, row);
-	@include md(width, 100%);
-
-	@include xs(flex-direction, column);
-} */
 .journalOrder {
   order: 1;
 }
@@ -1648,12 +1611,17 @@ header::after {
 
 .journalCart, .journalPhoto, .journalDescrip {
   position: relative;
-  flex-basis: 378px;
   height: 378px;
+  width: 100%;
 }
 
 .journalPhoto {
   overflow: hidden;
+}
+
+.journalPhoto img {
+  width: 100%;
+  height: 100%;
 }
 
 .journalDescrip_Title {
