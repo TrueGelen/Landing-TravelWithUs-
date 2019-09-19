@@ -1548,7 +1548,14 @@ header::after {
   text-transform: uppercase;
 }
 
+.owl-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
 .WrapJournal {
+  position: relative;
   margin: 75px 0px 90px 0px;
   display: flex;
   justify-content: space-between;

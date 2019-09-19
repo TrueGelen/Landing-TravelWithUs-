@@ -17,7 +17,7 @@ var gulp = require('gulp'),
     replace = require('gulp-replace');
 
 const arrayOfcss = ['./source/css/normalize.css', './source/css/smart-grid.css', './source/css/main.css']//, './source/css/main.css'];
-const arrayOfJs = ['./source/js/jquery.min.js', './source/js/responsiveMenu.js'];
+const arrayOfJs = ['./source/js/jquery.min.js', './source/js/responsiveMenu.js', '/source/js/owl.carousel.min.js', '/source/js/responsiveJournal.js'];
 
 gulp.task('concatCss', function () {
     console.log("im in concatcss");

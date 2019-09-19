@@ -4,29 +4,28 @@ $(window).on('load', (function () {
 	/* let arrOfJournalSingle = [...$('.section3 .container .WrapJournal .journalPair .journalPair_Single'), ...$('.section3 .container .WrapJournal .journalSingle')]
 	console.log(arrOfJournalSingle) */
 
-	let arrOfJournalSingle = $('.section3 .container .WrapJournal .journalPair .journalPair_Single')
-	arrOfJournalSingle.push(...$('.section3 .container .WrapJournal .journalSingle'))
-	console.log(arrOfJournalSingle)
+	let arrOfJournalSingle = $('.section3 .container .WrapJournal .journalPair')
+	console.log($('.section3 .container .owl-carousel'))
 
-	arrOfJournalSingle.not(function (ind) {
-		if (ind === 0)
-			return true
-	}).css('display', 'none')
-
-	/* $(window).resize(function () {
-		if (this.innerWidth <= 560) {
-			$(arrOfJournalSingle).owlCarousel({
+	function checkSize() {
+		console.log(this.innerWidth)
+		if (window.innerWidth <= 560) {
+			$('.section3 .container .owl-carousel').owlCarousel({
 				loop: true,
 				items: 1,
 				margin: 0,
 				responsiveClass: false,
 				responsive: false
 			})
-		}
-	}); */
+		} else
+			$('.section3 .container .owl-carousel').trigger('destroy.owl.carousel');
+	}
 
+	$(window).resize(function () {
+		checkSize()
+	});
 
-
+	checkSize()
 }))
 
 /* let btn = $('header .container .headerTitleWrapper .headerBtn')
