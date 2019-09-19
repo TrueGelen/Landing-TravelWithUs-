@@ -473,7 +473,7 @@ template {
   width: 100%;
 }
 
-.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+.owl-carousel .owl-dots.disabled, .owl-carousel .disabled.journalDotsForOwl, .owl-carousel .disabled.sec5dotsForOwl, .owl-carousel .disabled.sec6dotsForOwl, .owl-carousel .owl-nav.disabled {
   display: none;
 }
 
@@ -627,7 +627,7 @@ template {
  * Copyright 2013-2018 David Deutsch
  * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
-.owl-theme .owl-dots, .owl-theme .owl-nav {
+.owl-theme .owl-dots, .owl-theme .journalDotsForOwl, .owl-theme .sec5dotsForOwl, .owl-theme .sec6dotsForOwl, .owl-theme .owl-nav {
   text-align: center;
   -webkit-tap-highlight-color: transparent;
 }
@@ -658,16 +658,16 @@ template {
   cursor: default;
 }
 
-.owl-theme .owl-nav.disabled + .owl-dots {
+.owl-theme .owl-nav.disabled + .owl-dots, .owl-theme .owl-nav.disabled + .journalDotsForOwl, .owl-theme .owl-nav.disabled + .sec5dotsForOwl, .owl-theme .owl-nav.disabled + .sec6dotsForOwl {
   margin-top: 10px;
 }
 
-.owl-theme .owl-dots .owl-dot {
+.owl-theme .owl-dots .owl-dot, .owl-theme .journalDotsForOwl .owl-dot, .owl-theme .sec5dotsForOwl .owl-dot, .owl-theme .sec6dotsForOwl .owl-dot {
   display: inline-block;
   zoom: 1;
 }
 
-.owl-theme .owl-dots .owl-dot span {
+.owl-theme .owl-dots .owl-dot span, .owl-theme .journalDotsForOwl .owl-dot span, .owl-theme .sec5dotsForOwl .owl-dot span, .owl-theme .sec6dotsForOwl .owl-dot span {
   width: 10px;
   height: 10px;
   margin: 5px 7px;
@@ -678,7 +678,7 @@ template {
   border-radius: 30px;
 }
 
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .journalDotsForOwl .owl-dot.active span, .owl-theme .sec5dotsForOwl .owl-dot.active span, .owl-theme .sec6dotsForOwl .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span, .owl-theme .journalDotsForOwl .owl-dot:hover span, .owl-theme .sec5dotsForOwl .owl-dot:hover span, .owl-theme .sec6dotsForOwl .owl-dot:hover span {
   background: #869791;
 }
 
@@ -1548,7 +1548,7 @@ header::after {
   text-transform: uppercase;
 }
 
-.owl-dots {
+.journalDotsForOwl {
   position: absolute;
   left: 0;
   right: 0;
@@ -1660,6 +1660,18 @@ header::after {
 
 .journalPhoto {
   overflow: hidden;
+}
+
+@media screen and (max-width: 560px) {
+  .journalPhoto img {
+    height: 378px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .journalPhoto img {
+    width: 378px;
+  }
 }
 
 .journalDescrip_Title {
@@ -1944,6 +1956,30 @@ header::after {
   }
 }
 
+@media screen and (max-width: 780px) {
+  .sec5_content {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sec5_content {
+    padding: 0px 0px 30px 0px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sec5_content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sec5_content {
+    margin: 70px auto 0px auto;
+  }
+}
+
 .sec5_content::after {
   display: block;
   position: absolute;
@@ -1956,6 +1992,24 @@ header::after {
   z-index: -1;
 }
 
+@media screen and (max-width: 780px) {
+  .sec5_content::after {
+    top: 52.5%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sec5_content::after {
+    display: none;
+  }
+}
+
+.sec5dotsForOwl {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
 .sec5Col {
   display: flex;
   flex-direction: column;
@@ -1963,11 +2017,24 @@ header::after {
   align-items: center;
   flex-basis: 205px;
   min-height: 410px;
+  text-align: center;
 }
 
 @media screen and (max-width: 960px) {
   .sec5Col {
     flex-basis: 179px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .sec5Col {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .sec5Col {
+    margin-top: 50px;
   }
 }
 
@@ -2000,9 +2067,9 @@ header::after {
 }
 
 .sec5Col .icon-hexagonal {
-  margin-top: 50%;
-  margin-left: 50%;
-  transform: translate(-50%, -50%) rotate(30deg);
+  transform: rotate(30deg);
+  display: inline-block;
+  vertical-align: -145px;
   width: 125px;
   height: 140px;
   filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.19));
@@ -2071,11 +2138,36 @@ header::after {
   margin-top: 95px;
 }
 
+@media screen and (max-width: 1100px) {
+  .section6_content {
+    padding: 0px 0px 40px 0px;
+  }
+}
+
+.sec6dotsForOwl {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
 .sec6Card {
   position: relative;
   flex-basis: 200px;
+  max-width: 200px;
   height: 382px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .sec6Card {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .sec6Card {
+    padding: 10px 0px 0px 10px;
+  }
 }
 
 .sec6Card_background {
@@ -2091,6 +2183,12 @@ header::after {
   margin: 15px 0px 0px 20px;
 }
 
+@media screen and (max-width: 1100px) {
+  .sec6Card_starsSvg {
+    margin: 0px 0px 0px 0px;
+  }
+}
+
 .sec6Card_starsSvg .sec6Icon {
   display: inline-block;
   width: 16px;
@@ -2104,6 +2202,12 @@ header::after {
   max-width: 80%;
 }
 
+@media screen and (max-width: 1100px) {
+  .sec6Card_text {
+    margin: 100px 0px 0px 0px;
+  }
+}
+
 .sec6Card_text-t {
   font-family: "OpenSans-Regular";
   font-size: 28px;
@@ -2115,17 +2219,22 @@ header::after {
   font-family: "OpenSans-Regular";
   font-size: 16px;
   line-height: 1.38;
-  text-align: right;
+  text-align: left;
   color: #ffffff;
 }
 
 .sec6Card_footer {
-  position: relative;
-  margin: 95px 0px 0px 20px;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  bottom: 15px;
+  width: 90%;
 }
 
 .sec6Card_footer .sec6OldPrace {
+  position: relative;
   display: inline-block;
+  width: 49%;
   font-family: "OpenSans-Regular";
   font-size: 18px;
   color: #ffffff;
@@ -2134,12 +2243,14 @@ header::after {
 }
 
 .sec6Card_footer .sec6NewPrace {
+  position: relative;
   display: inline-block;
+  width: 48%;
   font-family: "OpenSans-Bold";
   font-size: 26px;
   color: #ffffff;
   vertical-align: middle;
-  margin-left: 20%;
+  text-align: right;
 }
 
 .section7 {

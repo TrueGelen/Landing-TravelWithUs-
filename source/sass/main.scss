@@ -500,7 +500,8 @@ header {
 	text-transform: uppercase;
 }
 
-.owl-dots{
+.journalDotsForOwl{
+	@extend .owl-dots;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -563,6 +564,11 @@ header {
 .journalPhoto{
 	@extend .journalCart;
 	overflow: hidden;
+
+	img{
+		@include xs(height, 378px);
+		@include xs(width, 378px);
+	}
 }
 
 .journalDescrip{
@@ -800,6 +806,11 @@ header {
 	justify-content: space-around;
 
 	@include md(justify-content, space-between);
+	@include sm(flex-wrap, wrap);
+
+	@include xs(padding, 0px 0px 30px 0px);
+	@include xs(width, 90%);
+	@include xs(margin, 70px auto 0px auto);
 	
 	&::after{
 		display: block;
@@ -811,7 +822,17 @@ header {
 		height: 2px;
 		background: #f0f3f6;
 		z-index: -1;
+
+		@include sm(top, 52.5%);
+		@include xs(display, none);
 	}
+}
+
+.sec5dotsForOwl{
+	@extend .owl-dots;
+	position: absolute;
+	right: 0;
+	left: 0;
 }
 
 .sec5Col{
@@ -821,8 +842,12 @@ header {
 	align-items: center;
 	flex-basis: 205px;
 	min-height: 410px;
+	text-align: center;
 
 	@include md(flex-basis, 179px);
+
+	@include sm(flex-basis, 50%);
+	@include sm(margin-top, 50px);
 
 	&_number {
 		position: relative;
@@ -853,9 +878,9 @@ header {
 	}
 
 	.icon-hexagonal {
-		margin-top: 50%;
-		margin-left: 50%;
-		transform: translate(-50%, -50%) rotate(30deg);
+		transform: rotate(30deg); 
+		display: inline-block;
+		vertical-align: -145px;
 		width: 125px;
 		height: 140px;
 		filter: drop-shadow( 0px 5px 5px rgba(0, 0, 0, .19));
@@ -925,13 +950,25 @@ header {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 95px;
+	@include lg(padding, 0px 0px 40px 0px);
+}
+
+.sec6dotsForOwl{
+	@extend .owl-dots;
+	position: absolute;
+	right: 0;
+	left: 0;
 }
 
 .sec6Card{
 	position: relative;
 	flex-basis: 200px;
+	max-width: 200px;
 	height: 382px;
 	cursor: pointer;
+
+	@include lg(margin, 0 auto);
+	@include lg(padding, 10px 0px 0px 10px);
 
 	&_background{
 		position: absolute;
@@ -945,6 +982,8 @@ header {
 		position: relative;
 		margin: 15px 0px 0px 20px;
 		
+		@include lg(margin, 0px 0px 0px 0px);
+
 		.sec6Icon {
 			display: inline-block;
 			width: 16px;
@@ -958,6 +997,8 @@ header {
 		margin: 100px 0px 0px 20px;
 		max-width: 80%;
 
+		@include lg(margin, 100px 0px 0px 0px);
+
 		&-t{
 			font-family: "OpenSans-Regular";
 			font-size: 28px;
@@ -969,17 +1010,22 @@ header {
 			font-family: "OpenSans-Regular";
 			font-size: 16px;
 			line-height: 1.38;
-			text-align: right;
+			text-align: left;
 			color: #ffffff;
 		}
 	}
 
 	&_footer{
-		position: relative;
-		margin: 95px 0px 0px 20px;
+		position: absolute;
+		display: block;
+		margin: 0 auto;
+		bottom: 15px;
+		width: 90%;
 
 		.sec6OldPrace{
+			position: relative;
 			display: inline-block;
+			width: 49%;
 			font-family: "OpenSans-Regular";
 			font-size: 18px;
 			color: #ffffff;
@@ -988,12 +1034,14 @@ header {
 		}
 
 		.sec6NewPrace{
+			position: relative;
 			display: inline-block;
+			width: 48%;
 			font-family: "OpenSans-Bold";
 			font-size: 26px;
 			color: #ffffff;
 			vertical-align: middle;
-			margin-left: 20%;
+			text-align: right;
 		}
 	}
 }
