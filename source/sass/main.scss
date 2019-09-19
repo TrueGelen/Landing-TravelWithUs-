@@ -2,6 +2,8 @@
 @import '_vars';
 @import '_fonts';
 @import 'smart-grid';
+@import 'owl.carousel.min';
+@import 'owl.theme.default.min';
 
 //---------common styles ----------------------
 
@@ -117,7 +119,10 @@ header {
 }
 
 .logoNavWrap{
-	@extend .navWrapper;
+	display: flex;
+	justify-content: space-between;
+	min-height: 88px;
+	align-items: center;
 	flex-basis:61%;
 
 	@include lg(flex-basis, 71%);
@@ -141,8 +146,21 @@ header {
 }
 
 .nav{
-
-	@include md(display, none)
+	@include md(display, none);
+	//@include md(display, flex);
+	@include md(position, absolute);
+	@include md(width, 100%);
+	@include md(height, 400px);
+	@include md(top, 88px);
+	@include md(background, #9fcef58f);
+	@include md(border-radius, 10px);	
+	@include md(flex-direction, column);
+	@include md(align-items, center);
+	@include md(justify-content, space-between);
+	@include md(backdrop-filter, blur(10px));
+	@include md(z-index, 1);
+	@include md(padding, 20px 0px);
+	@include es(top, 120px);
 
 	&Link{
 		position: relative;
@@ -153,6 +171,13 @@ header {
 		color: $secondColor;
 		text-decoration: none;
 		text-transform: uppercase;
+		cursor: pointer;
+
+		@include md(width, 100%);
+		@include md(text-align, center);
+		@include md(margin-right, 0px);
+		@include md(font-size, 22px);
+		@include md(color, rgb(197, 248, 255));
 
 		&:hover{
 			&::after{
@@ -170,7 +195,6 @@ header {
 }
 
 .navMob{
-	//position: absolute;
 	order: 2;
 	display: none;	
 	justify-content: space-between;
@@ -178,9 +202,6 @@ header {
 	flex-wrap: nowrap;
 	align-items: center;
 	width: 90px;
-	//left: 50%;
-	//transform: translate(-50%);
-	z-index: 3;
 
 	@include md(display, flex);
 	@include es(order,3);
@@ -492,18 +513,13 @@ header {
 	@include md(transform, translate(-50%));
 
 	@include sm(width, 98%);
+
+	@include xs(width, 378px);
+
+	@include es(width, 100%);
 }
 
-.journalOrder{
-	order: 1;
-}
-
-.journalCart{
-	position: relative;
-	flex-basis: 378px;
-	height: 378px;
-}
-
+//pair of journalPair_Single
 .journalPair{
 	flex-basis: 66.7%;
 	display: flex;
@@ -513,17 +529,35 @@ header {
 
 	&_Single{
 		display: flex;
+
+		@include xs(flex-direction, column);
 	}
 }
 
+//pair of journalPhoto and journalDescrip
 .journalSingle{
 	width: 33.3%;
 	display: flex;
 	flex-direction: column;
 
-
 	@include md(flex-direction, row);
 	@include md(width, 100%);
+
+	@include xs(flex-direction, column);
+}
+
+//order of journalPhoto and journalDescrip for second items(child) of journalPair
+.journalOrder{
+	order: 1;
+
+	@include xs(order, 0);
+}
+
+//common styles for journalCard and journalPhoto
+.journalCart{
+	position: relative;
+	flex-basis: 378px;
+	height: 378px;
 }
 
 .journalPhoto{
@@ -542,6 +576,8 @@ header {
 		text-transform: uppercase;
 		text-align: center;
 		color:$btnColor;
+
+		@include sm(margin, 25px auto 0px auto);
 	}
 
 	&_subTitle {
@@ -554,6 +590,8 @@ header {
 		line-height: 1.5;
 		text-align: center;
 		color: #212121;
+
+		@include sm(margin, 25px auto 0px auto);
 	}
 
 	&_p {
@@ -575,6 +613,8 @@ header {
 		font-style: italic;
 		text-align: center;
 		color: #212121;
+
+		@include sm(bottom, 15px);
 	}
 }
 
