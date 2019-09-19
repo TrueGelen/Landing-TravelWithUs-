@@ -534,7 +534,7 @@ header {
 	}
 }
 
-//pair of journalPhoto and journalDescrip
+/* //pair of journalPhoto and journalDescrip
 .journalSingle{
 	width: 33.3%;
 	display: flex;
@@ -544,7 +544,7 @@ header {
 	@include md(width, 100%);
 
 	@include xs(flex-direction, column);
-}
+} */
 
 //order of journalPhoto and journalDescrip for second items(child) of journalPair
 .journalOrder{
