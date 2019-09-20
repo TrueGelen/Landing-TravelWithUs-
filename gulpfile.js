@@ -16,8 +16,17 @@ var gulp = require('gulp'),
     cheerio = require('gulp-cheerio'),
     replace = require('gulp-replace');
 
-const arrayOfcss = ['./source/css/normalize.css', './source/css/smart-grid.css', './source/css/main.css']//, './source/css/main.css'];
-const arrayOfJs = ['./source/js/jquery.min.js', './source/js/responsiveMenu.js', '/source/js/owl.carousel.min.js', '/source/js/responsiveJournal.js'];
+const arrayOfcss = ['./source/css/normalize.css',
+    './source/css/smart-grid.css',
+    './source/css/main.css']
+
+const arrayOfJs = ['./source/js/jquery.min.js',
+    './source/js/responsiveMenu.js',
+    '/source/js/owl.carousel.min.js',
+    '/source/js/responsiveJournal.js',
+    '/source/js/responsiveSection5.js',
+    '/source/js/responsiveSection6.js',
+    '/source/js/responsiveGallery.js'];
 
 gulp.task('concatCss', function () {
     console.log("im in concatcss");

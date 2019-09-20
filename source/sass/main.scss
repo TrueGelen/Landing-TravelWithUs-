@@ -341,17 +341,6 @@ header {
 	}
 }
 
-/* .headerBorder{
-	background: url(../imgs/HeaderBorder.png) no-repeat;
-	position: absolute;
-	display: none;
-	width: 100%;
-	min-height: 324px;
-	left: 50%;
-	top: 50%;
-	transform: translate(-29.5%, -39%);
-} */
-
 
 //---------Section 2 ----------------------
 
@@ -749,8 +738,6 @@ header {
 		text-decoration: none;
 		transition: background .2s;
 
-		//@include sm(font-size, 14px);
-		//@include xs(display, block);
 		@include sm(flex-basis, 100%);
 		
 		&:hover{
@@ -1061,14 +1048,39 @@ header {
 }
 
 .section7_content{
+	position: relative;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 80px;
+	margin: 80px -10px 0px -10px;
+	width: auto;
+
+	@include md(justify-content, center);
+	@include sm(display, block);
+	@include sm(margin, 80px 0px 0px 0px);
+	@include sm(padding, 0px 0px 30px 0px);
+}
+
+.sec7dotsForOwl{
+	@extend .owl-dots;
+	position: absolute;
+	left: 0;
+	right: 0;
 }
 
 .sec7Pair{
 	text-align: center;
 	opacity: .85;
+	overflow: hidden;
+	margin: 0px 10px 0px 10px;
+
+	@include sm(margin, 0px 0px 0px 0px);
+	
+
+	img{
+		@include md(width, 100%);
+		@include sm(width, auto !important);
+		@include sm(margin, 10px auto !important);
+	}
 }
 
 .bottomPicture{
@@ -1310,6 +1322,8 @@ header {
 
 footer{
 	background: #3E5E69;
+
+	@include es(padding, 15px 0px);
 }
 
 .footerWrap{

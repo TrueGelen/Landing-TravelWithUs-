@@ -473,7 +473,7 @@ template {
   width: 100%;
 }
 
-.owl-carousel .owl-dots.disabled, .owl-carousel .disabled.journalDotsForOwl, .owl-carousel .disabled.sec5dotsForOwl, .owl-carousel .disabled.sec6dotsForOwl, .owl-carousel .owl-nav.disabled {
+.owl-carousel .owl-dots.disabled, .owl-carousel .disabled.journalDotsForOwl, .owl-carousel .disabled.sec5dotsForOwl, .owl-carousel .disabled.sec6dotsForOwl, .owl-carousel .disabled.sec7dotsForOwl, .owl-carousel .owl-nav.disabled {
   display: none;
 }
 
@@ -627,7 +627,7 @@ template {
  * Copyright 2013-2018 David Deutsch
  * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
-.owl-theme .owl-dots, .owl-theme .journalDotsForOwl, .owl-theme .sec5dotsForOwl, .owl-theme .sec6dotsForOwl, .owl-theme .owl-nav {
+.owl-theme .owl-dots, .owl-theme .journalDotsForOwl, .owl-theme .sec5dotsForOwl, .owl-theme .sec6dotsForOwl, .owl-theme .sec7dotsForOwl, .owl-theme .owl-nav {
   text-align: center;
   -webkit-tap-highlight-color: transparent;
 }
@@ -658,16 +658,16 @@ template {
   cursor: default;
 }
 
-.owl-theme .owl-nav.disabled + .owl-dots, .owl-theme .owl-nav.disabled + .journalDotsForOwl, .owl-theme .owl-nav.disabled + .sec5dotsForOwl, .owl-theme .owl-nav.disabled + .sec6dotsForOwl {
+.owl-theme .owl-nav.disabled + .owl-dots, .owl-theme .owl-nav.disabled + .journalDotsForOwl, .owl-theme .owl-nav.disabled + .sec5dotsForOwl, .owl-theme .owl-nav.disabled + .sec6dotsForOwl, .owl-theme .owl-nav.disabled + .sec7dotsForOwl {
   margin-top: 10px;
 }
 
-.owl-theme .owl-dots .owl-dot, .owl-theme .journalDotsForOwl .owl-dot, .owl-theme .sec5dotsForOwl .owl-dot, .owl-theme .sec6dotsForOwl .owl-dot {
+.owl-theme .owl-dots .owl-dot, .owl-theme .journalDotsForOwl .owl-dot, .owl-theme .sec5dotsForOwl .owl-dot, .owl-theme .sec6dotsForOwl .owl-dot, .owl-theme .sec7dotsForOwl .owl-dot {
   display: inline-block;
   zoom: 1;
 }
 
-.owl-theme .owl-dots .owl-dot span, .owl-theme .journalDotsForOwl .owl-dot span, .owl-theme .sec5dotsForOwl .owl-dot span, .owl-theme .sec6dotsForOwl .owl-dot span {
+.owl-theme .owl-dots .owl-dot span, .owl-theme .journalDotsForOwl .owl-dot span, .owl-theme .sec5dotsForOwl .owl-dot span, .owl-theme .sec6dotsForOwl .owl-dot span, .owl-theme .sec7dotsForOwl .owl-dot span {
   width: 10px;
   height: 10px;
   margin: 5px 7px;
@@ -678,7 +678,7 @@ template {
   border-radius: 30px;
 }
 
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .journalDotsForOwl .owl-dot.active span, .owl-theme .sec5dotsForOwl .owl-dot.active span, .owl-theme .sec6dotsForOwl .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span, .owl-theme .journalDotsForOwl .owl-dot:hover span, .owl-theme .sec5dotsForOwl .owl-dot:hover span, .owl-theme .sec6dotsForOwl .owl-dot:hover span {
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .journalDotsForOwl .owl-dot.active span, .owl-theme .sec5dotsForOwl .owl-dot.active span, .owl-theme .sec6dotsForOwl .owl-dot.active span, .owl-theme .sec7dotsForOwl .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span, .owl-theme .journalDotsForOwl .owl-dot:hover span, .owl-theme .sec5dotsForOwl .owl-dot:hover span, .owl-theme .sec6dotsForOwl .owl-dot:hover span, .owl-theme .sec7dotsForOwl .owl-dot:hover span {
   background: #869791;
 }
 
@@ -2267,14 +2267,72 @@ header::after {
 }
 
 .section7_content {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin: 80px -10px 0px -10px;
+  width: auto;
+}
+
+@media screen and (max-width: 960px) {
+  .section7_content {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .section7_content {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .section7_content {
+    margin: 80px 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .section7_content {
+    padding: 0px 0px 30px 0px;
+  }
+}
+
+.sec7dotsForOwl {
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .sec7Pair {
   text-align: center;
   opacity: .85;
+  overflow: hidden;
+  margin: 0px 10px 0px 10px;
+}
+
+@media screen and (max-width: 780px) {
+  .sec7Pair {
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .sec7Pair img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .sec7Pair img {
+    width: auto !important;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .sec7Pair img {
+    margin: 10px auto !important;
+  }
 }
 
 .bottomPicture {
@@ -2630,6 +2688,12 @@ header::after {
 
 footer {
   background: #3E5E69;
+}
+
+@media screen and (max-width: 420px) {
+  footer {
+    padding: 15px 0px;
+  }
 }
 
 .footerWrap {
