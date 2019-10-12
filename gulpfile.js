@@ -9,57 +9,55 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
     del = require('del'),
-    imagemin = require('gulp-imagemin'),
     babel = require('gulp-babel'),
     svgSprite = require('gulp-svg-sprite'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
-    replace = require('gulp-replace');
+    replace = require('gulp-replace'),
+    gulpif = require('gulp-if'),
+    sourcemaps = require('gulp-sourcemaps');
 
-const arrayOfcss = ['./source/css/normalize.css',
-    './source/css/smart-grid.css',
-    './source/css/main.css']
+let isDev = false
+let isProd = !isDev
+let isSync = false
 
 const arrayOfJs = ['./source/js/jquery.min.js',
     './source/js/responsiveMenu.js',
-    '/source/js/owl.carousel.min.js',
-    '/source/js/responsiveJournal.js',
-    '/source/js/responsiveSection5.js',
-    '/source/js/responsiveSection6.js',
-    '/source/js/responsiveGallery.js'];
+    './source/js/scrollTo.js',
+    './source/js/owl.carousel.min.js',
+    './source/js/responsiveJournal.js',
+    './source/js/responsiveSection5.js',
+    './source/js/responsiveSection6.js',
+    './source/js/responsiveGallery.js'];
 
-gulp.task('concatCss', function () {
-    console.log("im in concatcss");
-    return gulp.src(arrayOfcss)
-        .pipe(concat('styles.css'))
+gulp.task('styles', function () {
+    //return gulp.src('app/sass/*.+(sass|scss)')
+    return gulp.src('source/sass/main.scss')
+        .pipe(gulpif(isDev, sourcemaps.init()))
+        .pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
         .pipe(gcmq())
-        .pipe(autoprefixer({
-            cascade: false,
-            overrideBrowserslist: [
-                "> 0.1%",
-                "ie 10"
-            ]
-        }))
-        .pipe(cleanCSS({ level: 2 }))
-        .pipe(gulp.dest('./dist/css'));
-});
+        .pipe(gulpif(isProd, autoprefixer({
+            overrideBrowserslist: ["last 2 versions"],
+            cascade: false
+        })))
+        .pipe(gulpif(isProd, cleanCSS({ level: 2 })))
+        .pipe(gulpif(isDev, sourcemaps.write()))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(gulpif(isSync, browserSync.reload({ stream: true })))
+})
 
-gulp.task('concatJS', function () {
-    console.log("im in concatcss");
+gulp.task('js', function () {
     return gulp.src(arrayOfJs)
+        .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(concat('index.js'))
-        .pipe(babel({
+        .pipe(gulpif(isProd, babel({
             presets: ['@babel/env']
-        }))
-        .pipe(uglify({ toplevel: true }))
-        .pipe(gulp.dest('./dist/js'));
-});
-
-gulp.task('compress', function () {
-    return gulp.src('./dist/js/indexBabel.js')
-        .pipe(uglify({ toplevel: true }))
-        .pipe(gulp.dest('./dist/js/indexUglify.js'))
-});
+        })))
+        // .pipe(gulpif(isProd, uglify({ toplevel: true })))
+        .pipe(gulpif(isDev, sourcemaps.write('.')))
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(gulpif(isSync, browserSync.stream()))
+})
 
 gulp.task('makeSvgSprite', function () {
     return gulp.src('./source/svg/*.svg')
@@ -121,7 +119,7 @@ var settings = {
             width: '560px',
             fields: '15px'
         },
-        es: {
+        xxs: {
             width: '420px',
             fields: '10px'
         }
@@ -130,51 +128,50 @@ var settings = {
 
 smartgrid('./source/sass', settings);
 
-gulp.task('sass', function () {
-    return gulp.src('source/sass/*.+(sass|scss)')
-        .pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
-        .pipe(gulp.dest('source/css'))
-        .pipe(browserSync.reload({ stream: true }))
-    //.pipe(browserSync.stream());
-});
-
 gulp.task('browser-sync', function () {
     browserSync({
         server: {
-            baseDir: './'
+            baseDir: './dist'
         },
         notify: false
     });
 });
 
-
-//Не использую не устраивает сжатие.(лучше тут https://www.iloveimg.com/ru/compress-image)
-gulp.task('imageMin', function () {
-    gulp.src('app/img/**')
-        .pipe(imagemin([
-            imagemin.gifsicle({ interlaced: true }),
-            imagemin.jpegtran({ progressive: true }),
-            imagemin.optipng({ optimizationLevel: 5 }),
-            imagemin.svgo({
-                plugins: [
-                    { removeViewBox: true },
-                    { cleanupIDs: false }
-                ]
-            })
-        ]))
-        .pipe(gulp.dest('dist/img/'))
-});
+gulp.task('html', function () {
+    return gulp.src('./source/*.html')
+        .pipe(gulp.dest('./dist/'))
+        .pipe(gulpif(isSync, browserSync.stream()))
+})
 
 gulp.task('cleanDist', async function () {
-    const deletedPaths = await del(['dist/**', '!dist/imgs', '!dist/fonts', '!dist/index.html']);
+    const deletedPaths = await del(['dist/**', '!dist/imgs', '!dist/fonts']);
     console.log('Deleted files and directories:\n', deletedPaths.join('\n'));
 })
 
-gulp.task('dev', gulp.parallel('sass', 'browser-sync', function () {
-    gulp.watch('source/sass/**/*.+(sass|scss)', gulp.parallel('sass'))
-    //gulp.watch('source/sass/**/*.+(sass|scss)', gulp.parallel('sass')).on('change', browserSync.reload);
-    gulp.watch('./*.html').on('change', browserSync.reload);
-    gulp.watch('source/js/*.js').on('change', browserSync.reload);
-}));
+function devFlags(done) {
+    isSync = true
+    isDev = true
+    done()
+}
 
-gulp.task('build', gulp.series("cleanDist", 'sass', 'concatCss', 'concatJS', 'makeSvgSprite'));
+function prodFlags(done) {
+    isSync = true
+    isDev = false
+    done()
+}
+
+function smallProd(done) {
+    isSync = false
+    isDev = false
+    done()
+}
+
+function watcher() {
+    gulp.watch('source/sass/**/*.+(sass|scss)', gulp.parallel('styles'))
+    gulp.watch('./source/*.html', gulp.parallel('html'))
+    gulp.watch('source/js/*.js', gulp.parallel('js'))
+}
+//makeSvgSprite  - can use separately
+gulp.task('dev', gulp.series(devFlags, 'html', 'styles', 'js', gulp.parallel('browser-sync', watcher)))
+gulp.task('build', gulp.series('cleanDist', prodFlags, 'makeSvgSprite', 'html', 'styles', 'js', gulp.parallel('browser-sync', watcher)))
+gulp.task('fast', gulp.series('cleanDist', smallProd, 'makeSvgSprite', 'html', 'styles', 'js'))

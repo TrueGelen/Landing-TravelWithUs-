@@ -102,8 +102,8 @@ header {
 	background-color: #ffffff;
 
 	@include md(background-color, #9fcef573);
-	@include es(height, 130px);
-	@include es(opacity, .4);
+	@include xxs(height, 130px);
+	@include xxs(opacity, .4);
 	}
 }
 
@@ -115,7 +115,7 @@ header {
 	align-items: center;
 	z-index: 2;
 
-	@include es(flex-wrap, wrap);
+	@include xxs(flex-wrap, wrap);
 }
 
 .logoNavWrap{
@@ -127,7 +127,7 @@ header {
 
 	@include lg(flex-basis, 71%);
 	@include md(flex-basis, auto);
-	@include es(flex-basis, 50%);
+	@include xxs(flex-basis, 50%);
 }
 
 .logo{
@@ -146,21 +146,23 @@ header {
 }
 
 .nav{
-	@include md(display, none);
-	//@include md(display, flex);
-	@include md(position, absolute);
-	@include md(width, 100%);
-	@include md(height, 400px);
-	@include md(top, 88px);
-	@include md(background, #9fcef58f);
-	@include md(border-radius, 10px);	
-	@include md(flex-direction, column);
-	@include md(align-items, center);
-	@include md(justify-content, space-between);
-	@include md(backdrop-filter, blur(10px));
-	@include md(z-index, 1);
-	@include md(padding, 20px 0px);
-	@include es(top, 120px);
+	@include md-block{
+		display: none;
+		position: absolute;	
+		width: 100%;
+		height: 400px;
+		top: 88px;
+		background: #9fcef58f;
+		border-radius: 10px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		backdrop-filter: blur(10px);
+		z-index: 1;
+		padding: 20px 0px;
+	}
+
+	@include xxs(top, 120px);
 
 	&Link{
 		position: relative;
@@ -173,11 +175,13 @@ header {
 		text-transform: uppercase;
 		cursor: pointer;
 
-		@include md(width, 100%);
-		@include md(text-align, center);
-		@include md(margin-right, 0px);
-		@include md(font-size, 22px);
-		@include md(color, rgb(197, 248, 255));
+		@include md-block{
+			width: 100%;
+			text-align: center;
+			margin-right: 0px;
+			font-size: 22px;
+			color: rgb(197, 248, 255);
+		}
 
 		&:hover{
 			&::after{
@@ -204,9 +208,12 @@ header {
 	width: 90px;
 
 	@include md(display, flex);
-	@include es(order,3);
-	@include es(flex-basis, 100%);
-	@include es(justify-content, center);
+
+	@include xxs-block{
+		order: 3;
+		flex-basis: 100%;
+		justify-content: center;
+	}
 
 	&:hover{
 		cursor: pointer;
@@ -225,7 +232,7 @@ header {
 		justify-content: space-around;
 		flex-direction: column;
 
-		@include es(margin-left, 5px);
+		@include xxs(margin-left, 5px);
 		&_li{
 			display: inline-block;
 			border-radius: 25%;
@@ -251,8 +258,8 @@ header {
 
 	@include md(order,3);	
 	@include xs(padding, 12px 25px);
-	@include es(order,2);
-	@include es(flex-basis, 50%);	
+	@include xxs(order,2);
+	@include xxs(flex-basis, 50%);	
 
 	&:hover{
 		box-shadow: 0px 0px 3px 1px $btnColor;
@@ -282,7 +289,7 @@ header {
 
 		@include sm(font-size, 45px);
 		@include xs(font-size, 34px);
-		@include es(font-size, 30px);
+		@include xxs(font-size, 30px);
 	}
 
 	.headerTitleExt {
@@ -295,7 +302,7 @@ header {
 		@include sm(font-size, 60px);
 		@include xs(line-height, 1);
 		@include xs(font-size, 50px);
-		@include es(font-size, 40px);
+		@include xxs(font-size, 40px);
 	}
 
 	.headerP{
@@ -327,7 +334,7 @@ header {
 		text-decoration: none;
 		transition: background .2s;
 
-		@include es(padding, 23px 40px);
+		@include xxs(padding, 23px 40px);
 		
 		&:hover{
 			background: #58b6e6;
@@ -439,16 +446,24 @@ header {
 	z-index: 2;
 
 	@include sec21610(left, 400px);
-	@include sec21440(top, 330px);
-	@include sec21440(left, auto);
-	@include sec21440(right, 450px);
-	@include sec21440(width, 210px);
-	@include sec21440(height, 210px);
+
+	@include sec21440-block{
+		top: 330px;
+		left: auto;
+		right: 450px;
+		width: 210px;
+		height: 210px;
+	}
+
 	@include lg(right, 350px);
-	@include md(width, 280px);
-	@include md(height, 280px);
-	@include md(top, 360px);
-	@include md(right, 70px);
+
+	@include md-block{
+		width: 280px;
+		height: 280px;
+		top: 360px;
+		right: 70px;
+	}
+
 	@include sm(display, none);
 }
 
@@ -461,19 +476,29 @@ header {
 	z-index: 1;
 
 	@include sec21610(left, 480px);
-	@include sec21440(top, 60px);
-	@include sec21440(left, auto);
-	@include sec21440(right, 15px);
-	@include sec21440(width, 537px);
-	@include sec21440(height, 380px);
-	@include lg(top, 100px);
-	@include lg(height, 285px);
-	@include lg(width, 403px);
+
+	@include sec21440-block{
+		top: 60px;
+		left: auto;
+		right: 15px;
+		width: 537px;
+		height: 380px;
+	};
+
+	@include lg-block{
+		top: 100px;
+		height: 285px;
+		width: 403px;
+	}
+	
 	@include md(top, 50px);
 	@include sm(margin-right, 30px);
-	@include xs(right, auto);
-	@include xs(left, 50%);
-	@include xs(transform, translate(-50%));
+
+	@include xs-block{
+		right: auto;
+		left: 50%;
+		transform: translate(-50%);
+	}
 }
 
 
@@ -503,16 +528,16 @@ header {
 	justify-content: space-between;
 	box-shadow: 0px 0px 10px 1px #08537993;
 
-	@include md(flex-wrap, wrap);
-	@include md(width, 83%);
-	@include md(margin, 75px 0px 90px 50%);
-	@include md(transform, translate(-50%));
+	@include md-block{
+		flex-wrap: wrap;
+		width: 83%;
+		margin: 75px 0px 90px 50%;
+		transform: translate(-50%);
+	}
 
 	@include sm(width, 98%);
-
 	@include xs(width, 378px);
-
-	@include es(width, 100%);
+	@include xxs(width, 100%);
 }
 
 //pair of journalPair_Single
@@ -523,9 +548,11 @@ header {
 	max-width: 378px;
 	overflow: hidden;
 
-	@include md(flex-direction, row);
-	@include md(flex-basis, 100%);
-	@include md(max-width, 100%);
+	@include md-block{
+		flex-direction: row;
+		flex-basis: 100%;
+		max-width: 100%;
+	}
 
 	@include xs(flex-direction, column);
 }
@@ -651,7 +678,7 @@ header {
 
 .section4{
 	padding: 190px 0px 236px 0px;
-	background: url(/source/imgs/Sec4Background.png) no-repeat;	
+	background: url(/imgs/Sec4Background.png) no-repeat;	
 }
 
 .sec4_title {
@@ -795,9 +822,11 @@ header {
 	@include md(justify-content, space-between);
 	@include sm(flex-wrap, wrap);
 
-	@include xs(padding, 0px 0px 30px 0px);
-	@include xs(width, 90%);
-	@include xs(margin, 70px auto 0px auto);
+	@include xs-block{
+		padding: 0px 0px 30px 0px;
+		width: 90%;
+		margin: 70px auto 0px auto;
+	}
 	
 	&::after{
 		display: block;
@@ -849,7 +878,7 @@ header {
 		&::after{
 			display: block;
 			position: absolute;
-			content: url(/source/imgs/Sec5DottedLine.png);
+			content: url(/imgs/Sec5DottedLine.png);
 			top: 48px;
 			left: 20px;
 		}
@@ -907,14 +936,14 @@ header {
 
 .section6{
 	padding: 0px 0px 0px 0px;
-	background: url(/source/imgs/Sec6Background.png) no-repeat;
+	background: url(/imgs/Sec6Background.png) no-repeat;
 	height: 1002px;
 	background-size: 1920px 802px;
 	background-position: bottom;
 }
 
 .forDotsWorld{
-	background: url(/source/imgs/Sec6WorlMapDots.png) no-repeat;
+	background: url(/imgs/Sec6WorlMapDots.png) no-repeat;
 	background-size: 1469px 733px;
 	max-width: 1469px;
 	//max-height: 733px;
@@ -930,7 +959,7 @@ header {
 	color: #2c2e37;
 	text-transform: uppercase;
 
-	@include es(font-size, 26px);
+	@include xxs(font-size, 26px);
 }
 
 .section6_content{
@@ -1055,9 +1084,12 @@ header {
 	width: auto;
 
 	@include md(justify-content, center);
-	@include sm(display, block);
-	@include sm(margin, 80px 0px 0px 0px);
-	@include sm(padding, 0px 0px 30px 0px);
+
+	@include sm-block{
+		display: block;
+		margin: 80px 0px 0px 0px;
+		padding: 0px 0px 30px 0px;
+	}
 }
 
 .sec7dotsForOwl{
@@ -1093,15 +1125,15 @@ header {
 	background-color: #f8f9fa;
 	padding: 80px 0px 80px 0px;
 
-	@include es(padding, 10px 0px 10px 0px);
+	@include xxs(padding, 10px 0px 10px 0px);
 }
 
 .section8_content{
 	display: flex;
 	justify-content: space-between;
 
-	@include es(flex-direction, column);
-	@include es(align-items, center);
+	@include xxs(flex-direction, column);
+	@include xxs(align-items, center);
 }
 
 .sec8Item{
@@ -1114,7 +1146,7 @@ header {
 
 	@include xs(height, 18px);
 	@include xs(font-size, 16px);
-	@include es(margin, 10px);
+	@include xxs(margin, 10px);
 }
 
 .sec8Icon{
@@ -1144,12 +1176,12 @@ header {
 
 .section9{
 	padding: 90px 0px 0px 0px;
-	background: url(/source/imgs/Sec9Background.png) no-repeat;
+	background: url(/imgs/Sec9Background.png) no-repeat;
 	min-height: 1270px;
 	background-size: 1920px 1130px;
 	background-position: bottom;
 
-	@include es(padding, 90px 0px 50px 0px);
+	@include xxs(padding, 90px 0px 50px 0px);
 }
 
 .section9_tittle{
@@ -1192,9 +1224,10 @@ header {
 		text-align: justify;
 		color: #bcbcbc;
 
-		@include sm(font-size, 15px);
-		@include sm(line-height, 1.7);
-		@include sm(color, #835454);
+		@include sm-block{
+			font-size: 15px;
+			line-height: 1.7;
+		}
 	}
 
 	&_person{
@@ -1238,7 +1271,7 @@ header {
 }
 
 .sec9Form{
-	margin: 140px auto 0px auto;
+	margin: 140px auto 40px auto;
 	padding: 40px 30px;
 	backdrop-filter: blur(40px);
 	border-radius: 8px;
@@ -1253,7 +1286,7 @@ header {
 
 	@include sm(width, 75%);
 	@include xs(width, 100%);
-	@include es(margin-top, 80px);
+	@include xxs(margin-top, 80px);
 
 	&_title{
 		font-family: "OpenSans-Bold";
@@ -1323,7 +1356,7 @@ header {
 footer{
 	background: #3E5E69;
 
-	@include es(padding, 15px 0px);
+	@include xxs(padding, 15px 0px);
 }
 
 .footerWrap{
@@ -1332,7 +1365,7 @@ footer{
 	justify-content: space-between;
 	align-items: center;
 
-	@include es(flex-direction, column);
+	@include xxs(flex-direction, column);
 }
 
 .copyright{
@@ -1345,8 +1378,8 @@ footer{
 	left: 0;
 
 	@include xs(font-size, 14px);
-	@include es(order, 3);
-	@include es(font-size, 12px);
+	@include xxs(order, 3);
+	@include xxs(font-size, 12px);
 }
 
 .footerIcons{
@@ -1385,5 +1418,5 @@ footer{
 	
 	@include md(font-size, 20px);
 	@include xs(font-size, 15px);
-	@include es(font-size, 16px);
+	@include xxs(font-size, 16px);
 }

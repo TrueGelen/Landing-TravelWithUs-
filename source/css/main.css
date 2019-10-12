@@ -1240,16 +1240,6 @@ header::after {
   text-shadow: #fff 0px 0px 0px;
 }
 
-/* .headerBorder{
-	background: url(../imgs/HeaderBorder.png) no-repeat;
-	position: absolute;
-	display: none;
-	width: 100%;
-	min-height: 324px;
-	left: 50%;
-	top: 50%;
-	transform: translate(-29.5%, -39%);
-} */
 .section2 {
   position: relative;
   height: 667px;
