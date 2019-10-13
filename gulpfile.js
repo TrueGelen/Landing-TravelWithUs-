@@ -53,7 +53,7 @@ gulp.task('js', function () {
         .pipe(gulpif(isProd, babel({
             presets: ['@babel/env']
         })))
-        // .pipe(gulpif(isProd, uglify({ toplevel: true })))
+        .pipe(gulpif(isProd, uglify({ toplevel: true })))
         .pipe(gulpif(isDev, sourcemaps.write('.')))
         .pipe(gulp.dest('./dist/js'))
         .pipe(gulpif(isSync, browserSync.stream()))
@@ -171,7 +171,7 @@ function watcher() {
     gulp.watch('./source/*.html', gulp.parallel('html'))
     gulp.watch('source/js/*.js', gulp.parallel('js'))
 }
-//makeSvgSprite  - can use separately
-gulp.task('dev', gulp.series(devFlags, 'html', 'styles', 'js', gulp.parallel('browser-sync', watcher)))
+
+gulp.task('dev', gulp.series(devFlags, 'makeSvgSprite', 'html', 'styles', 'js', gulp.parallel('browser-sync', watcher)))
 gulp.task('build', gulp.series('cleanDist', prodFlags, 'makeSvgSprite', 'html', 'styles', 'js', gulp.parallel('browser-sync', watcher)))
 gulp.task('fast', gulp.series('cleanDist', smallProd, 'makeSvgSprite', 'html', 'styles', 'js'))
