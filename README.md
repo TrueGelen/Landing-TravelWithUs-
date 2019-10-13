@@ -1,5 +1,5 @@
-# Landing-TravelWithUs
-This is a training project.
+# [Landing-TravelWithUs](https://truegelen.github.io/Landing-TravelWithUs/dist/)
+This is a training project. [Link to this page](https://truegelen.github.io/Landing-TravelWithUs/dist/)
 ---------------------------------
 ***Used technology stack:***
 * HTML
