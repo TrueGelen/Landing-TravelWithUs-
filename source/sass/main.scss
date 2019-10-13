@@ -678,7 +678,7 @@ header {
 
 .section4{
 	padding: 190px 0px 236px 0px;
-	background: url(/imgs/Sec4Background.png) no-repeat;	
+	background: url(../imgs/Sec4Background.png) no-repeat;	
 }
 
 .sec4_title {
@@ -878,7 +878,7 @@ header {
 		&::after{
 			display: block;
 			position: absolute;
-			content: url(/imgs/Sec5DottedLine.png);
+			content: url(../imgs/Sec5DottedLine.png);
 			top: 48px;
 			left: 20px;
 		}
@@ -936,14 +936,14 @@ header {
 
 .section6{
 	padding: 0px 0px 0px 0px;
-	background: url(/imgs/Sec6Background.png) no-repeat;
+	background: url(../imgs/Sec6Background.png) no-repeat;
 	height: 1002px;
 	background-size: 1920px 802px;
 	background-position: bottom;
 }
 
 .forDotsWorld{
-	background: url(/imgs/Sec6WorlMapDots.png) no-repeat;
+	background: url(../imgs/Sec6WorlMapDots.png) no-repeat;
 	background-size: 1469px 733px;
 	max-width: 1469px;
 	//max-height: 733px;
@@ -1176,7 +1176,7 @@ header {
 
 .section9{
 	padding: 90px 0px 0px 0px;
-	background: url(/imgs/Sec9Background.png) no-repeat;
+	background: url(../imgs/Sec9Background.png) no-repeat;
 	min-height: 1270px;
 	background-size: 1920px 1130px;
 	background-position: bottom;
