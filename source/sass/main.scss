@@ -1034,9 +1034,9 @@ header {
 	&_footer{
 		position: absolute;
 		display: block;
-		margin: 0 auto;
 		bottom: 15px;
 		width: 90%;
+		left: 5%;
 
 		.sec6OldPrace{
 			position: relative;
@@ -1390,6 +1390,7 @@ footer{
 		width: 41px;
 		height: 41px;
 		background: #fff;
+		cursor: pointer;
 		
 		@include xs(width, 30px);
 		@include xs(height, 30px);
