@@ -3,7 +3,7 @@ $(window).on('load', (function () {
 
 	function checkSize() {
 		if (window.innerWidth <= 560) {
-			let owl = $('.section3 .container .owl-carousel').owlCarousel({
+			let owl = $('.ourJournal .container .owl-carousel').owlCarousel({
 				loop: true,
 				items: 1,
 				margin: 0,
@@ -15,7 +15,7 @@ $(window).on('load', (function () {
 				owl.trigger('refresh.owl.carousel')
 			}, 100)
 		} else {
-			$('.section3 .container .owl-carousel').trigger('destroy.owl.carousel');
+			$('.ourJournal .container .owl-carousel').trigger('destroy.owl.carousel');
 		}
 
 	}

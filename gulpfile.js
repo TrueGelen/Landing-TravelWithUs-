@@ -26,8 +26,8 @@ const arrayOfJs = ['./source/js/jquery.min.js',
     './source/js/scrollTo.js',
     './source/js/owl.carousel.min.js',
     './source/js/responsiveJournal.js',
-    './source/js/responsiveSection5.js',
-    './source/js/responsiveSection6.js',
+    './source/js/responsiveTravelDirection.js',
+    './source/js/responsiveWorkSchemeSection.js',
     './source/js/responsiveGallery.js'];
 
 gulp.task('styles', function () {

@@ -3,7 +3,7 @@ $(window).on('load', (function () {
 
 	function checkSize() {
 		if (window.innerWidth <= 1100) {
-			let owl = $('.section6 .container .section6_content').owlCarousel({
+			let owl = $('.travelDirection .container .travelDirection__directions').owlCarousel({
 				loop: false,
 				items: 3,
 				margin: 10,
@@ -22,7 +22,7 @@ $(window).on('load', (function () {
 				owl.trigger('refresh.owl.carousel')
 			}, 100)
 		} else
-			$('.section6 .container .section6_content').trigger('destroy.owl.carousel');
+			$('.travelDirection .container .travelDirection__directions').trigger('destroy.owl.carousel');
 	}
 
 	$(window).resize(function () {

@@ -83,7 +83,7 @@ input[type="number"]:focus {
 
 //---------Header ----------------------
 
-header {	
+.header {	
 	padding-bottom: 30px;
 	background: url(../imgs/backgroundHeader.png) no-repeat;
 	background-size: cover;
@@ -107,7 +107,7 @@ header {
 	}
 }
 
-.navWrapper{
+.header__navWrap{
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -118,7 +118,7 @@ header {
 	@include xxs(flex-wrap, wrap);
 }
 
-.logoNavWrap{
+.header__logoAndMenuWrap{
 	display: flex;
 	justify-content: space-between;
 	min-height: 88px;
@@ -130,8 +130,11 @@ header {
 	@include xxs(flex-basis, 50%);
 }
 
-.logo{
+.header__logo{
 	margin-bottom: 3px;
+}
+
+.logo{	
 	font-size: 29px;
 	font-family: "Bringin";
 	color: $btnColor;
@@ -145,26 +148,29 @@ header {
 	}		
 }
 
-.nav{
+.header__navigation{
+	top: 88px;
+	padding: 20px 0px;
+}
+
+.navigation{
 	@include md-block{
 		display: none;
 		position: absolute;	
 		width: 100%;
-		height: 400px;
-		top: 88px;
+		height: 400px;		
 		background: #9fcef58f;
 		border-radius: 10px;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
 		backdrop-filter: blur(10px);
-		z-index: 1;
-		padding: 20px 0px;
+		z-index: 1;		
 	}
 
 	@include xxs(top, 120px);
 
-	&Link{
+	&__link{
 		position: relative;
 		display: inline-block;
 		margin-right: 10px;
@@ -198,7 +204,7 @@ header {
 	}
 }
 
-.navMob{
+.mobileNav{
 	order: 2;
 	display: none;	
 	justify-content: space-between;
@@ -219,28 +225,29 @@ header {
 		cursor: pointer;
 	}
 
-	&_Txt{
+	&__title{
 		font-family: "OpenSans-Bold";
 		font-size: 18px;
 		text-transform: uppercase;
 		color: $secondColor;
 	}
 
-	&_lines{
+	&__burger{
 		align-self: stretch;
 		display: flex;
 		justify-content: space-around;
 		flex-direction: column;
 
 		@include xxs(margin-left, 5px);
-		&_li{
-			display: inline-block;
-			border-radius: 25%;
-			width: 25px;
-			height: 3px;
-			background:$btnColor;
-		}
-	}	
+	}
+
+	&__line{
+		display: inline-block;
+		border-radius: 25%;
+		width: 25px;
+		height: 3px;
+		background:$btnColor;
+	}
 }
 
 .callBtn{
@@ -271,7 +278,7 @@ header {
 	}
 }
 
-.headerTitleWrapper{
+.header__contentWrap{
 	margin-top: 100px;
 	border: 3px solid white;
 	padding: 100px 0px 60px 30px;
@@ -279,90 +286,89 @@ header {
 	@include lge(width, 800px);
 	@include lg(width, 100%);
 	@include xs(padding, 40px 30px 40px 30px);
+}
 
-	.headerTitle{
-		font-family: "OpenSans-Bold";
-		font-size: 50px;
-		letter-spacing:6px;
-		color: white;
-		text-transform: uppercase;
+.header__title1{
+	font-family: "OpenSans-Bold";
+	font-size: 50px;
+	letter-spacing:6px;
+	color: white;
+	text-transform: uppercase;
 
-		@include sm(font-size, 45px);
-		@include xs(font-size, 34px);
-		@include xxs(font-size, 30px);
+	@include sm(font-size, 45px);
+	@include xs(font-size, 34px);
+	@include xxs(font-size, 30px);
+}
+
+.header__title2{
+	font-family: "Bringin";
+	font-size: 66px;
+	line-height: 0.26;
+	letter-spacing: 1.32px;
+	color: $btnColor;
+
+	@include sm(font-size, 60px);
+	@include xs(line-height, 1);
+	@include xs(font-size, 50px);
+	@include xxs(font-size, 40px);
+}
+
+.header__subtitle{
+	margin: 32px 0px 0px 0px;
+	width: 434px;
+	opacity: 0.75;
+	font-family: "OpenSans-Regular";
+	font-size: 18px;
+	line-height: 1.61;
+	color: rgba(255, 255, 255, 0.75);
+	
+	@include xs(font-size, 16px);
+	@include xs(width, 100%);
+}
+
+.header__mainBtn{
+	margin: 30px 0px 0px 0px;
+	padding: 23px 73px;
+
+	@include xxs(padding, 23px 40px);
+}
+
+.mainBtn{
+	display: inline-block;	
+	border-radius: 4px;
+	box-shadow: 0 0 35px 0 rgba(3, 3, 3, 0.06);
+	background: $btnColor;
+	font-family: "Raleway-Bold";
+	font-size: 14px;
+	letter-spacing: 2.24px;
+	text-align: center;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background .2s;	
+	
+	&:hover{
+		background: #58b6e6;
+		text-shadow: #fff 0px 0px 7px;
 	}
-
-	.headerTitleExt {
-		font-family: "Bringin";
-		font-size: 66px;
-		line-height: 0.26;
-		letter-spacing: 1.32px;
-		color: $btnColor;
-
-		@include sm(font-size, 60px);
-		@include xs(line-height, 1);
-		@include xs(font-size, 50px);
-		@include xxs(font-size, 40px);
-	}
-
-	.headerP{
-		margin: 32px 0px 0px 0px;
-		width: 434px;
-		opacity: 0.75;
-		font-family: "OpenSans-Regular";
-		font-size: 18px;
-		line-height: 1.61;
-		color: rgba(255, 255, 255, 0.75);
-		
-		@include xs(font-size, 16px);
-		@include xs(width, 100%);
-	}
-
-	.headerBtn{
-		display: inline-block;
-		margin: 30px 0px 0px 0px;
-		padding: 23px 73px;
-		border-radius: 4px;
-		box-shadow: 0 0 35px 0 rgba(3, 3, 3, 0.06);
-		background: $btnColor;
-		font-family: "Raleway-Bold";
-		font-size: 14px;
-		letter-spacing: 2.24px;
-		text-align: center;
-		color: #ffffff;
-		text-transform: uppercase;
-		text-decoration: none;
-		transition: background .2s;
-
-		@include xxs(padding, 23px 40px);
-		
-		&:hover{
-			background: #58b6e6;
-			text-shadow: #fff 0px 0px 7px;
-		}
-		
-		&:active{
-			background: $btnColorActive;
-			text-shadow: #fff 0px 0px 0px;
-		}
+	
+	&:active{
+		background: $btnColorActive;
+		text-shadow: #fff 0px 0px 0px;
 	}
 }
 
 
 //---------Section 2 ----------------------
 
-.section2{
+.ourStory{
 	position: relative;
 		height: 667px;
 		background-color: #f6f4f4;
 		z-index: 1;
 }
 
-.wrapForPoint{	
-	overflow-y: hidden;
-}
-
-.containerForSec2{
+.ourStory__container{
 	position: relative;
 	padding: 0px 15px;
 	max-width: 1165px;
@@ -371,21 +377,25 @@ header {
 	@include sec21440(overflow, hidden)
 }
 
-.sec2contentWrapper{
+.pointBackground{	
+	overflow-y: hidden;
+
+	&__worldPoint{
+		position: absolute;
+		background: url(../imgs/Sec2WorldPoint.png) no-repeat;
+		margin-top: 20px;
+		margin-left: 85px;
+		width: 100%;
+		height: 667px;
+		z-index: -1;
+	}
+}
+
+.ourStory__contentWrap{
 	height: 667px;
 }
 
-.worldPoint{
-	position: absolute;
-	background: url(../imgs/Sec2WorldPoint.png) no-repeat;
-	margin-top: 20px;
-	margin-left: 85px;
-	width: 100%;
-	height: 667px;
-	z-index: -1;
-}
-
-.sec2BlockText{
+.ourStory__info{
 	margin-top: 250px;
 	margin-left: 5px;
 
@@ -393,24 +403,6 @@ header {
 	@include sm(margin-left, 30px);
 	@include xs(margin-left, 0px);
 	@include xs(margin, 380px auto 0px auto);
-	
-	h2{
-		font-family: "OpenSans-Bold";
-		font-size: 20px;
-		letter-spacing: 2px;
-		color: #2c2e37;
-		text-transform: uppercase;
-	}
-
-	p{
-		margin-top: 20px;
-		width: 352px;
-		font-family: "OpenSans-Regular";
-		font-size: 14px;
-		line-height: 1.86;
-		color: #949494;
-		@include xs(width, 100%);
-	}
 
 	.btnReadMore{
 		display: inline-block;
@@ -437,7 +429,25 @@ header {
 	}
 }
 
-.sec2SmallPhoto{
+.ourStory__title{
+	font-family: "OpenSans-Bold";
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #2c2e37;
+	text-transform: uppercase;
+}
+
+.ourStory__subtitle{
+	margin-top: 20px;
+	width: 352px;
+	font-family: "OpenSans-Regular";
+	font-size: 14px;
+	line-height: 1.86;
+	color: #949494;
+	@include xs(width, 100%);
+}
+
+.ourStory__smallPhoto{
 	position: absolute;
 	width: 350px;
 	height: 350px;
@@ -467,7 +477,7 @@ header {
 	@include sm(display, none);
 }
 
-.sec2BigPhoto{
+.ourStory__bigPhoto{
 	position: absolute;
 	width: 806px;
 	height: 570px;
@@ -504,7 +514,7 @@ header {
 
 //---------Section 3 ----------------------
 
-.sec3Title {
+.ourJournal__title {
 	margin-top: 105px;
   font-family: "OpenSans-Bold";
   font-size: 30px;
@@ -521,7 +531,7 @@ header {
 	right: 0;
 }
 
-.WrapJournal{
+.ourJournal__journalWrap{
 	position: relative;
 	margin: 75px 0px 90px 0px;
 	display: flex;
@@ -577,7 +587,7 @@ header {
 	width: 100%;
 }
 
-.journalPhoto{
+.journalPair__photo{
 	@extend .journalCart;
 	overflow: hidden;
 
@@ -587,57 +597,57 @@ header {
 	}
 }
 
-.journalDescrip{
+.journalPair__description{
 	@extend .journalCart;
+}
 
-	&_Title {
-		margin-top: 43px;
-		font-family: "OpenSans-Bold";
-		font-size: 11px;
-		letter-spacing: 1.65px;
-		text-transform: uppercase;
-		text-align: center;
-		color:$btnColor;
+.journalPair__title {
+	margin-top: 43px;
+	font-family: "OpenSans-Bold";
+	font-size: 11px;
+	letter-spacing: 1.65px;
+	text-transform: uppercase;
+	text-align: center;
+	color:$btnColor;
 
-		@include sm(margin, 25px auto 0px auto);
-	}
+	@include sm(margin, 25px auto 0px auto);
+}
 
-	&_subTitle {
-		margin: 50px auto 0px auto;
-		width: 90%;
-		font-family: "OpenSans-Bold";
-		font-size: 16px;
-		text-transform: uppercase;
-		letter-spacing: 2.4px;
-		line-height: 1.5;
-		text-align: center;
-		color: #212121;
+.journalPair__subTitle {
+	margin: 50px auto 0px auto;
+	width: 90%;
+	font-family: "OpenSans-Bold";
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 2.4px;
+	line-height: 1.5;
+	text-align: center;
+	color: #212121;
 
-		@include sm(margin, 25px auto 0px auto);
-	}
+	@include sm(margin, 25px auto 0px auto);
+}
 
-	&_p {
-		margin: 20px auto 0px auto;
-		width: 80%;
-		font-family: "OpenSans-Regular";
-		font-size: 14px;
-		line-height: 1.64;
-		text-align: center;
-		color: #777777;
-	}
+.journalPair__text {
+	margin: 20px auto 0px auto;
+	width: 80%;
+	font-family: "OpenSans-Regular";
+	font-size: 14px;
+	line-height: 1.64;
+	text-align: center;
+	color: #777777;
+}
 
-	&_n{
-		position: absolute;
-		bottom: 20px;
-		left: 50%;
-		font-family: sans-serif;
-		font-size: 14px;
-		font-style: italic;
-		text-align: center;
-		color: #212121;
+.journalPair__number{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	text-align: center;
+	color: #212121;
 
-		@include sm(bottom, 15px);
-	}
+	@include sm(bottom, 15px);
 }
 
 .icon-journal{
@@ -676,12 +686,12 @@ header {
 
 //---------Section 4 ----------------------
 
-.section4{
+.orderSection{
 	padding: 190px 0px 236px 0px;
 	background: url(../imgs/Sec4Background.png) no-repeat;	
 }
 
-.sec4_title {
+.orderSection__title {
   font-family: "OpenSans-Bold";
   font-size: 20px;
   letter-spacing: 2px;
@@ -689,7 +699,7 @@ header {
 	text-transform: uppercase;
 }
 
-.sec4_subtitle {
+.orderSection__subtitle {
 	margin-top: 20px;
   font-family: "OpenSans-Regular";
   font-size: 16px;
@@ -701,7 +711,7 @@ header {
 	@include xs(max-width, 100%);
 }
 
-.sec4_orderWrap {
+.orderForm {
 	position: relative;
 	display: flex;
 	justify-content: space-around;
@@ -731,7 +741,7 @@ header {
 		@include xs(display, none);
 	}
 	
-	input{
+	.orderForm__inp{
 		box-sizing: border-box;
 		flex-basis: 36.2%;
 		height: 56px;
@@ -748,38 +758,19 @@ header {
 		@include xs(margin-top, 2px);
 	}
 
-	.sec4_btnOrder{
-		display: inline-block;
+	.orderForm__btn{
 		line-height: 56px;
 		width: 26.5%;
-		height: 90.3%;
-		border-radius: 4px;
-		box-shadow: 0 0 35px 0 rgba(3, 3, 3, 0.06);
-		background: $btnColor;
+		height: 90.3%;		
 		font-family: "OpenSans-Bold";
 		font-size: 16px;
 		letter-spacing: 1.6px;
-		text-align: center;
-		color: #ffffff;
-		text-transform: uppercase;
-		text-decoration: none;
-		transition: background .2s;
 
 		@include sm(flex-basis, 100%);
-		
-		&:hover{
-			background: #58b6e6;
-			text-shadow: #fff 0px 0px 7px;
-		}
-		
-		&:active{
-			background: $btnColorActive;
-			text-shadow: #fff 0px 0px 0px;
-		}
 	}
 }
 
-.noteWrap{
+.orderSection__note{
 	margin-top: 15px;
 	color: $btnColor;
 
@@ -788,23 +779,23 @@ header {
 		height: 16px;
 		fill: $btnColor;
 	}
+}
 
-	.sec4_note{
-		display: inline-block;
-		font-family: "OpenSans-Regular";
-		font-size: 14px;
-		vertical-align: 2px;
-		letter-spacing: 0.28px;
-	}
+.orderSection__info{
+	display: inline-block;
+	font-family: "OpenSans-Regular";
+	font-size: 14px;
+	vertical-align: 2px;
+	letter-spacing: 0.28px;
 }
 
 //---------Section 5 ----------------------
 
-.section5{
+.workSchemeSection{
 	padding: 110px 0px 100px 0px;
 }
 
-.sec5_title {
+.workSchemeSection__title{
   font-family: "OpenSans-Bold";
   font-size: 30px;
   letter-spacing: 3px;
@@ -813,20 +804,23 @@ header {
 	text-align: center;
 }
 
-.sec5_content{
-	position: relative;
+.workSchemeSection__scheme{
 	margin-top: 70px;
-	display: flex;
-	justify-content: space-around;
-
-	@include md(justify-content, space-between);
-	@include sm(flex-wrap, wrap);
 
 	@include xs-block{
 		padding: 0px 0px 30px 0px;
 		width: 90%;
 		margin: 70px auto 0px auto;
 	}
+}
+
+.workScheme{
+	position: relative;	
+	display: flex;
+	justify-content: space-around;
+
+	@include md(justify-content, space-between);
+	@include sm(flex-wrap, wrap);
 	
 	&::after{
 		display: block;
@@ -842,30 +836,23 @@ header {
 		@include sm(top, 52.5%);
 		@include xs(display, none);
 	}
-}
 
-.sec5dotsForOwl{
-	@extend .owl-dots;
-	position: absolute;
-	right: 0;
-	left: 0;
-}
+	&__step{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		flex-basis: 205px;
+		min-height: 410px;
+		text-align: center;
+	
+		@include md(flex-basis, 179px);
+	
+		@include sm(flex-basis, 50%);
+		@include sm(margin-top, 50px);
+	}
 
-.sec5Col{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	flex-basis: 205px;
-	min-height: 410px;
-	text-align: center;
-
-	@include md(flex-basis, 179px);
-
-	@include sm(flex-basis, 50%);
-	@include sm(margin-top, 50px);
-
-	&_number {
+	&__number {
 		position: relative;
 		background: #fff;
 		width: 48px;
@@ -874,7 +861,7 @@ header {
 		border-radius: 50%;
 		text-align-last: center;
 		line-height: 41px;
-
+	
 		&::after{
 			display: block;
 			position: absolute;
@@ -884,7 +871,7 @@ header {
 		}
 	}
 
-	&_circle {
+	&__circle {
 		margin-top: 20px;
 		position: relative;
 		width: 179px;
@@ -893,7 +880,7 @@ header {
 		border-radius: 50%;
 	}
 
-	.icon-hexagonal {
+	&__hexagonal {
 		transform: rotate(30deg); 
 		display: inline-block;
 		vertical-align: -145px;
@@ -903,7 +890,7 @@ header {
 		fill: #fff;
 	}
 
-	.sec5Icon{
+	&__icon{
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -913,28 +900,36 @@ header {
 		fill: #404041;
 	}
 
-	.sec5Col_text{
-		
-		&-t {
-			font-family: "Roboto-Black";
-			font-size: 18px;
-			text-align: center;
-			color: #2c2e37;
-		}
-
-		&-sbt{
-			font-family: "Roboto-Light";
-			font-size: 16px;
-			line-height: 1.5;
-			text-align: center;
-			color: #949494;
-		}
+	&__info{
+			
 	}
+
+	&__title {
+		font-family: "Roboto-Black";
+		font-size: 18px;
+		text-align: center;
+		color: #2c2e37;
+	}
+
+	&__subtitle{
+		font-family: "Roboto-Light";
+		font-size: 16px;
+		line-height: 1.5;
+		text-align: center;
+		color: #949494;
+	}
+}
+
+.sec5dotsForOwl{
+	@extend .owl-dots;
+	position: absolute;
+	right: 0;
+	left: 0;
 }
 
 //---------Section 6 ----------------------
 
-.section6{
+.travelDirection{
 	padding: 0px 0px 0px 0px;
 	background: url(../imgs/Sec6Background.png) no-repeat;
 	height: 1002px;
@@ -942,7 +937,7 @@ header {
 	background-position: bottom;
 }
 
-.forDotsWorld{
+.travelDirection__dotsBackground{
 	background: url(../imgs/Sec6WorlMapDots.png) no-repeat;
 	background-size: 1469px 733px;
 	max-width: 1469px;
@@ -950,7 +945,7 @@ header {
 	margin: 0 auto;
 }
 
-.section6_tittle {
+.travelDirection__tittle {
 	margin-top: 30px;
   font-family: "OpenSans-Bold";
   font-size: 30px;
@@ -962,11 +957,14 @@ header {
 	@include xxs(font-size, 26px);
 }
 
-.section6_content{
-	display: flex;
-	justify-content: space-between;
+.travelDirection__directions{
 	margin-top: 95px;
 	@include lg(padding, 0px 0px 40px 0px);
+}
+
+.travelDirections{
+	display: flex;
+	justify-content: space-between;	
 }
 
 .sec6dotsForOwl{
@@ -976,7 +974,7 @@ header {
 	left: 0;
 }
 
-.sec6Card{
+.directionCard{
 	position: relative;
 	flex-basis: 200px;
 	max-width: 200px;
@@ -986,7 +984,7 @@ header {
 	@include lg(margin, 0 auto);
 	@include lg(padding, 10px 0px 0px 10px);
 
-	&_background{
+	&__background{
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -994,80 +992,80 @@ header {
 		height: 100%;
 	}
 
-	&_starsSvg{
+	&__stars{
 		position: relative;
 		margin: 15px 0px 0px 20px;
 		
 		@include lg(margin, 0px 0px 0px 0px);
-
-		.sec6Icon {
-			display: inline-block;
-			width: 16px;
-			height: 16px;			
-			fill: #ffffff;
-		}
 	}
 
-	&_text{
+	&__star {
+		display: inline-block;
+		width: 16px;
+		height: 16px;			
+		fill: #ffffff;
+	}
+
+	&__info{
 		position: relative;
 		margin: 100px 0px 0px 20px;
 		max-width: 80%;
 
 		@include lg(margin, 100px 0px 0px 0px);
-
-		&-t{
-			font-family: "OpenSans-Regular";
-			font-size: 28px;
-			line-height: 2.25;
-			color: #ffffff;
-		}
-
-		&-sbt{
-			font-family: "OpenSans-Regular";
-			font-size: 16px;
-			line-height: 1.38;
-			text-align: left;
-			color: #ffffff;
-		}
 	}
 
-	&_footer{
+	&__title{
+		font-family: "OpenSans-Regular";
+		font-size: 28px;
+		line-height: 2.25;
+		color: #ffffff;
+	}
+
+	&__subtitle{
+		font-family: "OpenSans-Regular";
+		font-size: 16px;
+		line-height: 1.38;
+		text-align: left;
+		color: #ffffff;
+	}
+
+	&__price{
 		position: absolute;
 		display: block;
 		bottom: 15px;
 		width: 90%;
 		left: 5%;
+	}
 
-		.sec6OldPrace{
-			position: relative;
-			display: inline-block;
-			width: 49%;
-			font-family: "OpenSans-Regular";
-			font-size: 18px;
-			color: #ffffff;
-			vertical-align: middle;
-			text-decoration: line-through;
-		}
+	&__oldPrice{
+		position: relative;
+		display: inline-block;
+		width: 49%;
+		font-family: "OpenSans-Regular";
+		font-size: 18px;
+		color: #ffffff;
+		vertical-align: middle;
+		text-decoration: line-through;
+	}
 
-		.sec6NewPrace{
-			position: relative;
-			display: inline-block;
-			width: 48%;
-			font-family: "OpenSans-Bold";
-			font-size: 26px;
-			color: #ffffff;
-			vertical-align: middle;
-			text-align: right;
-		}
+	&__currentPrice{
+		position: relative;
+		display: inline-block;
+		width: 48%;
+		font-family: "OpenSans-Bold";
+		font-size: 26px;
+		color: #ffffff;
+		vertical-align: middle;
+		text-align: right;
 	}
 }
 
 //---------Section 7 ----------------------
-.section7{
+.sectionGallery{
 	padding: 120px 0px 80px 0px;
 }
 
-.section7_tittle{
+.sectionGallery__tittle{
   font-family: "OpenSans-Bold";
   font-size: 30px;
   letter-spacing: 3px;
@@ -1076,20 +1074,22 @@ header {
 	text-transform: uppercase;
 }
 
-.section7_content{
-	position: relative;
-	display: flex;
-	justify-content: space-between;
+.sectionGallery__gallery{
 	margin: 80px -10px 0px -10px;
-	width: auto;
-
-	@include md(justify-content, center);
-
 	@include sm-block{
 		display: block;
 		margin: 80px 0px 0px 0px;
 		padding: 0px 0px 30px 0px;
 	}
+}
+
+.customerGallery{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: auto;
+
+	@include md(justify-content, center);
 }
 
 .sec7dotsForOwl{
@@ -1099,7 +1099,7 @@ header {
 	right: 0;
 }
 
-.sec7Pair{
+.customerGallery__pair{
 	text-align: center;
 	opacity: .85;
 	overflow: hidden;
@@ -1115,20 +1115,20 @@ header {
 	}
 }
 
-.bottomPicture{
+.customerGallery__bottomPicture{
 	margin-top: 10px;
 }
 
 //---------Section 8 ----------------------
 
-.section8{
+.brandsSection{
 	background-color: #f8f9fa;
 	padding: 80px 0px 80px 0px;
 
 	@include xxs(padding, 10px 0px 10px 0px);
 }
 
-.section8_content{
+.brandsSection__brands{
 	display: flex;
 	justify-content: space-between;
 
@@ -1136,7 +1136,7 @@ header {
 	@include xxs(align-items, center);
 }
 
-.sec8Item{
+.brandsSection__brand{
 	display: inline-block;
 	height: 26px;
 	color: #CBCCCD;
@@ -1149,7 +1149,7 @@ header {
 	@include xxs(margin, 10px);
 }
 
-.sec8Icon{
+.brandsSection__icon{
 	height: 26px;
 	width: 26px;
 	fill: #CBCCCD;
@@ -1159,22 +1159,22 @@ header {
 	@include xs(width, 18px);
 }
 
-.sec8NikeIcon{
+.brandsSection__icon_nike{
 	height: 50px;
 	width: 50px;
-	margin-top: -5px;
+	margin-top: -8px;
 	@include xs(height, 30px);
 	@include xs(width, 30px);
 }
 
-.sec8TextIcon{
+.brandsSection__iconText{
 	display: inline-block;
 	vertical-align: middle;
 }
 
 //---------Section 9 ----------------------
 
-.section9{
+.sectionContacts{
 	padding: 90px 0px 0px 0px;
 	background: url(../imgs/Sec9Background.png) no-repeat;
 	min-height: 1270px;
@@ -1184,7 +1184,7 @@ header {
 	@include xxs(padding, 90px 0px 50px 0px);
 }
 
-.section9_tittle{
+.sectionContacts__tittle{
   font-family: "OpenSans-Bold";
   font-size: 30px;
   letter-spacing: 3px;
@@ -1195,7 +1195,7 @@ header {
 	@include xs(font-size, 26px);
 }
 
-.sec9Comments{
+.sectionContacts__customerReviews{
 	display: flex;
 	justify-content: space-around;
 	margin-top: 90px;
@@ -1203,12 +1203,14 @@ header {
 	@include xs(flex-direction, column);
 }
 
-.sec9Comment{
-	flex-basis: 46.5%;
-
+.sectionContacts__customerReview{
 	@include xs(margin-top, 15px);
+}
+
+.customerReview{
+	flex-basis: 46.5%;
 	
-	.sec9Icon-quote{
+	&__quote{
 		width: 24px;
 		height: 22px;
 		fill: #bcbcbc;
@@ -1217,7 +1219,7 @@ header {
 		@include sm(fill, #6d5353);
 	}
 
-	&_text{
+	&__review{
 		font-family: "OpenSans-Regular";
 		font-size: 18px;
 		line-height: 1.83;
@@ -1230,49 +1232,56 @@ header {
 		}
 	}
 
-	&_person{
+	&__person{
 		margin-top: 25px;
 
 		@include sm(background, rgba(255, 255, 255, 0.76));
 		@include sm(border-radius, 10px);
+	}
 
-		&_avatar{
-			display: inline-block;
-			vertical-align: middle;
-			width: 64px;
-			height: 64px;
+	&__avatar{
+		display: inline-block;
+		vertical-align: middle;
+		width: 64px;
+		height: 64px;
 
-			@include sm(width, 40px);
-			@include sm(height, 40px);
+		@include sm(width, 40px);
+		@include sm(height, 40px);
 
-			img{
-				width: 100%;
-				height: 100%;
-			}
+		img{
+			width: 100%;
+			height: 100%;
 		}
+	}
 
-		&_name{
-			display: inline;
-			vertical-align: middle;
-			margin-left: 20px;
-			font-family: "OpenSans-Bold";
-			font-size: 16px;
-			text-align: justify;
-			color: $btnColor;
+	&__name{
+		display: inline;
+		vertical-align: middle;
+		margin-left: 20px;
+		font-family: "OpenSans-Bold";
+		font-size: 16px;
+		text-align: justify;
+		color: $btnColor;
 
-			@include sm(font-size, 13px);
-			@include sm(margin-left, 5px);
+		@include sm(font-size, 13px);
+		@include sm(margin-left, 5px);
 
-			span{
-				font-family: "OpenSans-Light";
-			}
+		span{
+			font-family: "OpenSans-Light";
 		}
 	}
 }
 
-.sec9Form{
+.sectionContacts__contactForm{
 	margin: 140px auto 40px auto;
 	padding: 40px 30px;
+
+	@include sm(width, 75%);
+	@include xs(width, 100%);
+	@include xxs(margin-top, 80px);
+}
+
+.contactForm{	
 	backdrop-filter: blur(40px);
 	border-radius: 8px;
   box-shadow: 0px 7px 40px 0 rgba(0, 0, 0, 0.4);
@@ -1284,28 +1293,24 @@ header {
 	align-items: center;
 	text-align: center;
 
-	@include sm(width, 75%);
-	@include xs(width, 100%);
-	@include xxs(margin-top, 80px);
-
-	&_title{
+	&__title{
 		font-family: "OpenSans-Bold";
 		font-size: 36px;
 		letter-spacing: 3.6px;
 		color: #36aeea;
 		text-transform: uppercase;
-
-		p{
-			font-family: "OpenSans-Regular";
-			font-size: 16px;
-			line-height: 1.81;
-			color: #383e4a;
-			letter-spacing:normal;
-			text-transform: none;
-		}
 	}
 
-	input{
+	&__subtitle{
+		font-family: "OpenSans-Regular";
+		font-size: 16px;
+		line-height: 1.81;
+		color: #383e4a;
+		letter-spacing:normal;
+		text-transform: none;
+	}
+
+	&__inp{
 		padding: 0px 15px 0px 15px;
 		font-family: "Roboto-Regular";
 		font-size: 18px;
@@ -1325,41 +1330,25 @@ header {
 		}
 	}
 
-	.sec9Form_btn{
-		display: inline-block;
+	.contactForm__btn{
 		width: 100%;
 		height: 70px;
 		font-family: "OpenSans-Bold";
 		font-size: 16px;
 		letter-spacing: 2.56px;
-		text-transform: uppercase;
-		text-decoration: none;
 		line-height: 70px;
-		color: #ffffff;
-		border-radius: 4px;
-		background-color: $btnColor;
-
-		&:hover{
-			background: #58b6e6;
-			text-shadow: #fff 0px 0px 7px;
-		}
-		
-		&:active{
-			background: $btnColorActive;
-			text-shadow: #fff 0px 0px 0px;
-		}
 	}
 }
 
 //---------Footer ----------------------
 
-footer{
+.footer{
 	background: #3E5E69;
 
 	@include xxs(padding, 15px 0px);
 }
 
-.footerWrap{
+.footer__wrap{
 	display: flex;
 	height: 80px;
 	justify-content: space-between;
@@ -1368,7 +1357,7 @@ footer{
 	@include xxs(flex-direction, column);
 }
 
-.copyright{
+.footer__copyright{
 	display: inline-block;
 	vertical-align: middle;
   mix-blend-mode: overlay;
@@ -1382,34 +1371,34 @@ footer{
 	@include xxs(font-size, 12px);
 }
 
-.footerIcons{
+.footer__icons{
 	display: inline-block;
 	vertical-align: middle;
-
-	.footerIcon{
-		width: 41px;
-		height: 41px;
-		background: #fff;
-		cursor: pointer;
-		
-		@include xs(width, 30px);
-		@include xs(height, 30px);
-
-		&-twitter{
-			fill: #29c5f6;
-		}
-
-		&-facebook{
-			fill:#6788ce;
-		}
-
-		&-vk{
-			fill: #54769a;
-		}
-	}
 }
 
-.footerNumber{
+.footer__icon{
+	width: 41px;
+	height: 41px;
+	background: #fff;
+	cursor: pointer;
+	
+	@include xs(width, 30px);
+	@include xs(height, 30px);
+}
+
+.icon-twitter{
+	fill: #29c5f6;
+}
+
+.icon-facebook{
+	fill:#6788ce;
+}
+
+.icon-vk{
+	fill: #54769a;
+}
+
+.footer__number{
 	display: inline-block;
 	vertical-align: middle;
   mix-blend-mode: overlay;

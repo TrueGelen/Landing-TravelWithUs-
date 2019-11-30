@@ -10,68 +10,68 @@
 </head>
 
 <body>
-	<header>
+	<header class="header">
 		<div class="container">
-			<div class="navWrapper">
-				<div class="navMob">
-					<div class="navMob_Txt">menu</div>
-					<div class="navMob_lines">
-						<div class="navMob_lines_li"></div>
-						<div class="navMob_lines_li"></div>
-						<div class="navMob_lines_li"></div>
+			<div class="header__navWrap">
+				<div class="mobileNav">
+					<div class="mobileNav__title">menu</div>
+					<div class="mobileNav__burger">
+						<div class="mobileNav__line"></div>
+						<div class="mobileNav__line"></div>
+						<div class="mobileNav__line"></div>
 					</div>
 				</div>
-				<div class="logoNavWrap">
-					<a href="#dd" class="logo">Moun<p>tains</p>
+				<div class="header__logoAndMenuWrap">
+					<a href="#dd" class="logo header__logo">Moun<p>tains</p>
 					</a>
-					<div class="nav">
-						<a href="#our_story" class="navLink">our story</a>
-						<a href="#work" class="navLink">work</a>
-						<a href="#gallery" class="navLink">gallery</a>
-						<a href="#journal" class="navLink">journal</a>
-						<a href="#contact" class="navLink">contact</a>
-						<a href="#reviews" class="navLink">reviews</a>
-						<a href="#order" class="navLink">order</a>
+					<div class="navigation header__navigation">
+						<a href="#our_story" class="navigation__link">our story</a>
+						<a href="#work" class="navigation__link">work</a>
+						<a href="#gallery" class="navigation__link">gallery</a>
+						<a href="#journal" class="navigation__link">journal</a>
+						<a href="#contact" class="navigation__link">contact</a>
+						<a href="#reviews" class="navigation__link">reviews</a>
+						<a href="#order" class="navigation__link">order</a>
 					</div>
 				</div>
 				<a href="#dd" class="callBtn noselect">call us</a>
 			</div>
-			<div class="headerTitleWrapper">
-				<h1 class="headerTitle">travel with us</h1>
-				<p class="headerTitleExt">to the Mountains</p>
-				<p class="headerP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui error nesciunt expedita
+			<div class="header__contentWrap">
+				<h1 class="header__title1">travel with us</h1>
+				<p class="header__title2">to the Mountains</p>
+				<p class="header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui error nesciunt
+					expedita
 				</p>
-				<a href="#order" class="headerBtn noselect">order now</a>
+				<a href="#order" class="header__mainBtn mainBtn noselect">order now</a>
 			</div>
 		</div>
 	</header>
 
-	<section class="section2" id="our_story">
-		<div class="containerForSec2">
-			<div class="wrapForPoint">
-				<div class="worldPoint"></div>
+	<section class="ourStory" id="our_story">
+		<div class="ourStory__container">
+			<div class="pointBackground">
+				<div class="pointBackground__worldPoint"></div>
 			</div>
-			<div class="sec2contentWrapper">
-				<div class="sec2BlockText">
-					<h2>about us</h2>
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas maxime dolor quisquam voluptatibus, voluptas
+			<div class="ourStory__contentWrap">
+				<div class="ourStory__info">
+					<h2 class="ourStory__title">about us</h2>
+					<p class="ourStory__subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas maxime dolor
+						quisquam voluptatibus, voluptas
 						quaerat minima facere soluta in molestiae.</p>
 					<a href="#dd" class="btnReadMore noselect">read more</a>
 				</div>
-				<img src="imgs/Sec2Small.png" alt="mountains" class="sec2SmallPhoto">
-				<img src="imgs/Sec2Big.png" alt="mountains" class="sec2BigPhoto">
+				<img src="imgs/Sec2Small.png" alt="mountains" class="ourStory__smallPhoto">
+				<img src="imgs/Sec2Big.png" alt="mountains" class="ourStory__bigPhoto">
 			</div>
 		</div>
 	</section>
 
-	<section class="section3">
+	<section class="ourJournal">
 		<div class="container">
-			<div id="journal">
-				<h2 class="sec3Title">our journal</h2>
-			</div>
-			<div class="WrapJournal owl-carousel owl-theme">
+			<h2 id="journal" class="ourJournal__title">our journal</h2>
+			<div class="ourJournal__journalWrap owl-carousel owl-theme">
 				<div class="journalPair">
-					<div class="journalPhoto">
+					<div class="journalPair__photo">
 						<img src="imgs/Sec3HeartBackground.png" alt="love" class="JourImg">
 						<div class="journalCircle">
 							<svg class="icon-journal icon-heart">
@@ -79,275 +79,272 @@
 							</svg>
 						</div>
 					</div>
-					<div class="journalDescrip">
-						<p class="journalDescrip_Title">love</p>
-						<p class="journalDescrip_subTitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, iste!</p>
-						<p class="journalDescrip_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorum
+					<div class="journalPair__description">
+						<p class="journalPair__title">love</p>
+						<p class="journalPair__subTitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, iste!</p>
+						<p class="journalPair__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorum
 							voluptatem quibusdam nulla architecto enim.</p>
-						<p class="journalDescrip_n">01</p>
+						<p class="journalPair__number">01</p>
 					</div>
 				</div>
 				<div class="journalPair">
-					<div class="journalPhoto journalOrder">
+					<div class="journalPair__photo journalOrder">
 						<img src="imgs/Sec3LeafBackground.png" alt="tree" class="JourImg">
 						<svg class="icon-journal icon-leaf">
 							<use xlink:href="svgSprite/sprite.svg#002-leaf"></use>
 						</svg>
 					</div>
-					<div class="journalDescrip">
-						<p class="journalDescrip_Title">tree</p>
-						<p class="journalDescrip_subTitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+					<div class="journalPair__description">
+						<p class="journalPair__title">tree</p>
+						<p class="journalPair__subTitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
 							consequatur.</p>
-						<p class="journalDescrip_p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, in
+						<p class="journalPair__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, in
 							nisi! Eligendi doloremque sequi molestiae?</p>
-						<p class="journalDescrip_n">02</p>
+						<p class="journalPair__number">02</p>
 					</div>
 				</div>
 				<div class="journalPair">
-					<div class="journalPhoto">
+					<div class="journalPair__photo">
 						<img src="imgs/Sec3DropBackground.png" alt="water" class="JourImg">
 						<svg class="icon-journal icon-water">
 							<use xlink:href="svgSprite/sprite.svg#001-water"></use>
 						</svg>
 					</div>
-					<div class="journalDescrip">
-						<p class="journalDescrip_Title">Water</p>
-						<p class="journalDescrip_subTitle">Lorem ipsum dolor sit amet consectetur.</p>
-						<p class="journalDescrip_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eius eaque non
+					<div class="journalPair__description">
+						<p class="journalPair__title">Water</p>
+						<p class="journalPair__subTitle">Lorem ipsum dolor sit amet consectetur.</p>
+						<p class="journalPair__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eius eaque non
 							nobis perferendis beatae.</p>
-						<p class="journalDescrip_n">03</p>
+						<p class="journalPair__number">03</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="section4" id="order">
+	<section class="orderSection" id="order">
 		<div class="container">
-			<h2 class="sec4_title">do you wanna go?</h2>
-			<p class="sec4_subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi ipsum eligendi ex
+			<h2 class="orderSection__title">do you wanna go?</h2>
+			<p class="orderSection__subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi ipsum
+				eligendi ex
 				ut
 				iure, dolore nisi ipsa magni assumenda omnis?</p>
-			<div class="sec4_orderWrap">
-				<input type="text" name="name" placeholder="Your name:" class="inpName">
-				<input type="number" name="phone" placeholder="Your phone:" class="inpPhone">
-				<a href="#dd" class="sec4_btnOrder noselect">order now</a>
+			<div class="orderForm">
+				<input type="text" name="name" placeholder="Your name:" class="orderForm__inp">
+				<input type="number" name="phone" placeholder="Your phone:" class="orderForm__inp">
+				<a href="#dd" class="mainBtn orderForm__btn noselect">order now</a>
 			</div>
-			<div class="noteWrap">
+			<div class="orderSection__note">
 				<svg class="icon-lock">
 					<use xlink:href="svgSprite/sprite.svg#008-lock"></use>
 				</svg>
-				<p class="sec4_note">* Your data will not be transferred</p>
+				<p class="orderSection__info">* Your data will not be transferred</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="section5" id="work">
+	<section class="workSchemeSection" id="work">
 		<div class="container">
-			<div>
-				<h2 class="sec5_title">how we work</h2>
-			</div>
-			<div class="sec5_content owl-carousel owl-theme">
-				<div class="sec5Col">
-					<div class="sec5Col_number">1</div>
-					<div class="sec5Col_circle">
-						<svg class="icon-hexagonal">
+			<h2 class="workSchemeSection__title">how we work</h2>
+			<div class="workSchemeSection__scheme workScheme owl-carousel owl-theme">
+				<div class="workScheme__step">
+					<div class="workScheme__number">1</div>
+					<div class="workScheme__circle">
+						<svg class="workScheme__hexagonal">
 							<use xlink:href="svgSprite/sprite.svg#018-hexagonal"></use>
 						</svg>
-						<svg class="icon-sheet sec5Icon">
+						<svg class="icon-sheet workScheme__icon">
 							<use xlink:href="svgSprite/sprite.svg#006-sheet"></use>
 						</svg>
 					</div>
-					<div class="sec5Col_text">
-						<p class="sec5Col_text-t">Lorem, ipsum dolor.</p>
-						<p class="sec5Col_text-sbt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
+					<div class="workScheme__info">
+						<p class="workScheme__title">Lorem, ipsum dolor.</p>
+						<p class="workScheme__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
 					</div>
 				</div>
-				<div class="sec5Col">
-					<div class="sec5Col_number">2</div>
-					<div class="sec5Col_circle">
-						<svg class="icon-hexagonal">
+				<div class="workScheme__step">
+					<div class="workScheme__number">2</div>
+					<div class="workScheme__circle">
+						<svg class="workScheme__hexagonal">
 							<use xlink:href="svgSprite/sprite.svg#018-hexagonal"></use>
 						</svg>
-						<svg class="icon-info sec5Icon">
+						<svg class="icon-info workScheme__icon">
 							<use xlink:href="svgSprite/sprite.svg#005-info"></use>
 						</svg>
 					</div>
-					<div class="sec5Col_text">
-						<p class="sec5Col_text-t">Lorem, ipsum dolor.</p>
-						<p class="sec5Col_text-sbt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
+					<div class="workScheme__info">
+						<p class="workScheme__title">Lorem, ipsum dolor.</p>
+						<p class="workScheme__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
 					</div>
 				</div>
-				<div class="sec5Col">
-					<div class="sec5Col_number">3</div>
-					<div class="sec5Col_circle">
-						<svg class="icon-hexagonal">
+				<div class="workScheme__step">
+					<div class="workScheme__number">3</div>
+					<div class="workScheme__circle">
+						<svg class="workScheme__hexagonal">
 							<use xlink:href="svgSprite/sprite.svg#018-hexagonal"></use>
 						</svg>
-						<svg class="icon-book sec5Icon">
+						<svg class="icon-book workScheme__icon">
 							<use xlink:href="svgSprite/sprite.svg#003-book"></use>
 						</svg>
 					</div>
-					<div class="sec5Col_text">
-						<p class="sec5Col_text-t">Lorem, ipsum dolor.</p>
-						<p class="sec5Col_text-sbt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
+					<div class="workScheme__info">
+						<p class="workScheme__title">Lorem, ipsum dolor.</p>
+						<p class="workScheme__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
 					</div>
 				</div>
-				<div class="sec5Col">
-					<div class="sec5Col_number">4</div>
-					<div class="sec5Col_circle">
-						<svg class="icon-hexagonal">
+				<div class="workScheme__step">
+					<div class="workScheme__number">4</div>
+					<div class="workScheme__circle">
+						<svg class="workScheme__hexagonal">
 							<use xlink:href="svgSprite/sprite.svg#018-hexagonal"></use>
 						</svg>
-						<svg class="icon-checkmark-verify-interface-symbol-button sec5Icon">
+						<svg class="icon-checkmark-verify-interface-symbol-button workScheme__icon">
 							<use xlink:href="svgSprite/sprite.svg#004-checkmark-verify-interface-symbol-button"></use>
 						</svg>
 					</div>
-					<div class="sec5Col_text">
-						<p class="sec5Col_text-t">Lorem, ipsum dolor.</p>
-						<p class="sec5Col_text-sbt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
+					<div class="workScheme__info">
+						<p class="workScheme__title">Lorem, ipsum dolor.</p>
+						<p class="workScheme__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ab.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="section6">
-		<div class="forDotsWorld">
+	<section class="travelDirection">
+		<div class="travelDirection__dotsBackground">
 			<div class="container">
-				<div>
-					<h2 class="section6_tittle">travel with us</h2>
-				</div>
-				<div class="section6_content owl-theme owl-carousel">
-					<div class="sec6Card">
-						<img src="imgs/Sec6BackForItems1.png" alt="Carpathian" class="sec6Card_background">
-						<div class="sec6Card_starsSvg">
-							<svg class="icon-star sec6Icon">
+				<h2 class="travelDirection__tittle">travel with us</h2>
+				<div class="travelDirection__directions travelDirections owl-theme owl-carousel">
+					<div class="directionCard">
+						<img src="imgs/Sec6BackForItems1.png" alt="Carpathian" class="directionCard__background">
+						<div class="directionCard__stars">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
 						</div>
-						<div class="sec6Card_text">
-							<div class="sec6Card_text-t">Carpathian</div>
-							<div class="sec6Card_text-sbt">Lorem ipsum dolor sit amet.</div>
+						<div class="directionCard__info">
+							<div class="directionCard__title">Carpathian</div>
+							<div class="directionCard__subtitle">Lorem ipsum dolor sit amet.</div>
 						</div>
-						<div class="sec6Card_footer">
-							<p class="sec6OldPrace">3150$</p>
-							<p class="sec6NewPrace">$793</p>
+						<div class="directionCard__price">
+							<p class="directionCard__oldPrice">3150$</p>
+							<p class="directionCard__currentPrice">$793</p>
 						</div>
 					</div>
-					<div class="sec6Card">
-						<img src="imgs/Sec6BackForItems2.png" alt="Alps" class="sec6Card_background">
-						<div class="sec6Card_starsSvg">
-							<svg class="icon-star sec6Icon">
+					<div class="directionCard">
+						<img src="imgs/Sec6BackForItems2.png" alt="Alps" class="directionCard__background">
+						<div class="directionCard__stars">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
-								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
-							</svg>
-						</div>
-						<div class="sec6Card_text">
-							<div class="sec6Card_text-t">Alps</div>
-							<div class="sec6Card_text-sbt">Lorem ipsum dolor sit amet.</div>
-						</div>
-						<div class="sec6Card_footer">
-							<p class="sec6OldPrace">3150$</p>
-							<p class="sec6NewPrace">$1893</p>
-						</div>
-					</div>
-					<div class="sec6Card">
-						<img src="imgs/Sec6BackForItems3.png" alt="Pyrenees" class="sec6Card_background">
-						<div class="sec6Card_starsSvg">
-							<svg class="icon-star sec6Icon">
-								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
-							</svg>
-							<svg class="icon-star sec6Icon">
-								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
-							</svg>
-							<svg class="icon-star sec6Icon">
-								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
-							</svg>
-							<svg class="icon-star sec6Icon">
-								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
-							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
 						</div>
-						<div class="sec6Card_text">
-							<div class="sec6Card_text-t">Pyrenees</div>
-							<div class="sec6Card_text-sbt">Lorem ipsum dolor sit amet.</div>
+						<div class="directionCard__info">
+							<div class="directionCard__title">Alps</div>
+							<div class="directionCard__subtitle">Lorem ipsum dolor sit amet.</div>
 						</div>
-						<div class="sec6Card_footer">
-							<p class="sec6OldPrace">3150$</p>
-							<p class="sec6NewPrace">$2593</p>
+						<div class="directionCard__price">
+							<p class="directionCard__oldPrice">3150$</p>
+							<p class="directionCard__currentPrice">$1893</p>
 						</div>
 					</div>
-					<div class="sec6Card">
-						<img src="imgs/Sec6BackForItems4.png" alt="Rocky" class="sec6Card_background">
-						<div class="sec6Card_starsSvg">
-							<svg class="icon-star sec6Icon">
+					<div class="directionCard">
+						<img src="imgs/Sec6BackForItems3.png" alt="Pyrenees" class="directionCard__background">
+						<div class="directionCard__stars">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
 						</div>
-						<div class="sec6Card_text">
-							<div class="sec6Card_text-t">Rocky</div>
-							<div class="sec6Card_text-sbt">Lorem ipsum dolor sit amet.</div>
+						<div class="directionCard__info">
+							<div class="directionCard__title">Pyrenees</div>
+							<div class="directionCard__subtitle">Lorem ipsum dolor sit amet.</div>
 						</div>
-						<div class="sec6Card_footer">
-							<p class="sec6OldPrace">3150$</p>
-							<p class="sec6NewPrace">$2123</p>
+						<div class="directionCard__price">
+							<p class="directionCard__oldPrice">3150$</p>
+							<p class="directionCard__currentPrice">$2593</p>
 						</div>
 					</div>
-					<div class="sec6Card">
-						<img src="imgs/Sec6BackForItems5.png" alt="Kavkaz" class="sec6Card_background">
-						<div class="sec6Card_starsSvg">
-							<svg class="icon-star sec6Icon">
+					<div class="directionCard">
+						<img src="imgs/Sec6BackForItems4.png" alt="Rocky" class="directionCard__background">
+						<div class="directionCard__stars">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
-							<svg class="icon-star sec6Icon">
+							<svg class="icon-star directionCard__star">
+								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
+							</svg>
+							<svg class="icon-star directionCard__star">
+								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
+							</svg>
+							<svg class="icon-star directionCard__star">
 								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
 							</svg>
 						</div>
-						<div class="sec6Card_text">
-							<div class="sec6Card_text-t">Kavkaz</div>
-							<div class="sec6Card_text-sbt">Lorem ipsum dolor sit amet.</div>
+						<div class="directionCard__info">
+							<div class="directionCard__title">Rocky</div>
+							<div class="directionCard__subtitle">Lorem ipsum dolor sit amet.</div>
 						</div>
-						<div class="sec6Card_footer">
-							<p class="sec6OldPrace">3150$</p>
-							<p class="sec6NewPrace">$593</p>
+						<div class="directionCard__price">
+							<p class="directionCard__oldPrice">3150$</p>
+							<p class="directionCard__currentPrice">$2123</p>
+						</div>
+					</div>
+					<div class="directionCard">
+						<img src="imgs/Sec6BackForItems5.png" alt="Kavkaz" class="directionCard__background">
+						<div class="directionCard__stars">
+							<svg class="icon-star directionCard__star">
+								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
+							</svg>
+							<svg class="icon-star directionCard__star">
+								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
+							</svg>
+							<svg class="icon-star directionCard__star">
+								<use xlink:href="svgSprite/sprite.svg#007-star"></use>
+							</svg>
+						</div>
+						<div class="directionCard__info">
+							<div class="directionCard__title">Kavkaz</div>
+							<div class="directionCard__subtitle">Lorem ipsum dolor sit amet.</div>
+						</div>
+						<div class="directionCard__price">
+							<p class="directionCard__oldPrice">3150$</p>
+							<p class="directionCard__currentPrice">$593</p>
 						</div>
 					</div>
 				</div>
@@ -355,64 +352,62 @@
 		</div>
 	</section>
 
-	<section class="section7" id="gallery">
+	<section class="sectionGallery" id="gallery">
 		<div class="container">
-			<div>
-				<h2 class="section7_tittle">gallery</h2>
-			</div>
-			<div class="section7_content owl-carousel owl-theme">
-				<div class="sec7Pair">
-					<img src="imgs/Sec7BackItem1.png" alt="traveling" class="topPicture">
-					<img src="imgs/Sec7BackItem2.png" alt="traveling" class="bottomPicture">
+			<h2 class="sectionGallery__tittle">gallery</h2>
+			<div class="sectionGallery__gallery customerGallery owl-carousel owl-theme">
+				<div class="customerGallery__pair">
+					<img src="imgs/Sec7BackItem1.png" alt="traveling" class="customerGallery__topPicture">
+					<img src="imgs/Sec7BackItem2.png" alt="traveling" class="customerGallery__bottomPicture">
 				</div>
-				<div class="sec7Pair">
-					<img src="imgs/Sec7BackItem3.png" alt="traveling" class="topPicture">
-					<img src="imgs/Sec7BackItem4.png" alt="traveling" class="bottomPicture">
+				<div class="customerGallery__pair">
+					<img src="imgs/Sec7BackItem3.png" alt="traveling" class="customerGallery__topPicture">
+					<img src="imgs/Sec7BackItem4.png" alt="traveling" class="customerGallery__bottomPicture">
 				</div>
-				<div class="sec7Pair">
-					<img src="imgs/Sec7BackItem5.png" alt="traveling" class="topPicture">
-					<img src="imgs/Sec7BackItem6.png" alt="traveling" class="bottomPicture">
+				<div class="customerGallery__pair">
+					<img src="imgs/Sec7BackItem5.png" alt="traveling" class="customerGallery__topPicture">
+					<img src="imgs/Sec7BackItem6.png" alt="traveling" class="customerGallery__bottomPicture">
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="section8">
+	<section class="brandsSection">
 		<div class="container">
-			<div class="section8_content">
-				<div class="sec8Item">
-					<svg class="sec8Icon">
+			<div class="brandsSection__brands">
+				<div class="brandsSection__brand">
+					<svg class="brandsSection__icon">
 						<use xlink:href="svgSprite/sprite.svg#010-slack"></use>
 					</svg>
-					<p class="sec8TextIcon">
+					<p class="brandsSection__iconText">
 						slack
 					</p>
 				</div>
-				<div class="sec8Item">
-					<svg class="sec8Icon">
+				<div class="brandsSection__brand">
+					<svg class="brandsSection__icon">
 						<use xlink:href="svgSprite/sprite.svg#011-logo"></use>
 					</svg>
 				</div>
-				<div class="sec8Item">
-					<p class="sec8TextIcon">
+				<div class="brandsSection__brand">
+					<p class="brandsSection__iconText">
 						Google
 					</p>
 				</div>
-				<div class="sec8Item">
-					<p class="sec8TextIcon">
+				<div class="brandsSection__brand">
+					<p class="brandsSection__iconText">
 						facebook
 					</p>
 				</div>
-				<div class="sec8Item">
-					<svg class="sec8Icon">
+				<div class="brandsSection__brand">
+					<svg class="brandsSection__icon">
 						<use xlink:href="svgSprite/sprite.svg#012-spotify"></use>
 					</svg>
-					<p class="sec8TextIcon">
+					<p class="brandsSection__iconText">
 						spotify
 					</p>
 				</div>
-				<div class="sec8Item">
-					<svg class="sec8Icon sec8NikeIcon">
+				<div class="brandsSection__brand">
+					<svg class="brandsSection__icon brandsSection__icon_nike">
 						<use xlink:href="svgSprite/sprite.svg#013-nike"></use>
 					</svg>
 				</div>
@@ -420,71 +415,69 @@
 		</div>
 	</section>
 
-	<section class="section9" id="reviews">
+	<section class="sectionContacts" id="reviews">
 		<div class="container">
-			<div>
-				<h2 class="section9_tittle">our clients say</h2>
-			</div>
-			<div class="sec9Comments">
-				<div class="sec9Comment">
-					<svg class="sec9Icon-quote">
+			<h2 class="sectionContacts__tittle">our clients say</h2>
+			<div class="sectionContacts__customerReviews">
+				<div class="customerReview sectionContacts__customerReview">
+					<svg class="customerReview__quote">
 						<use xlink:href="svgSprite/sprite.svg#014-quote"></use>
 					</svg>
-					<div class="sec9Comment_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae odit
+					<div class="customerReview__review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+						molestiae odit
 						aliquam maxime sequi labore, aut pariatur reprehenderit animi sit dicta a quis quaerat, voluptatem quia
 						omnis. Dolorum dolores nobis alias.</div>
-					<div class="sec9Comment_person">
-						<div class="sec9Comment_person_avatar">
+					<div class="customerReview__person">
+						<div class="customerReview__avatar">
 							<img src="imgs/sec9Avatar1.png" alt="avatar">
 						</div>
-						<p class="sec9Comment_person_name">Pavliv Yaroslav <span>Web designer</span></p>
+						<p class="customerReview__name">Pavliv Yaroslav <span>Web designer</span></p>
 					</div>
 				</div>
-				<div class="sec9Comment">
-					<svg class="sec9Icon-quote">
+				<div class="customerReview sectionContacts__customerReview">
+					<svg class="customerReview__quote">
 						<use xlink:href="svgSprite/sprite.svg#014-quote"></use>
 					</svg>
-					<div class="sec9Comment_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae odit
+					<div class="customerReview__review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+						molestiae odit
 						aliquam maxime sequi labore, aut pariatur reprehenderit animi sit dicta a quis quaerat, voluptatem quia
 						omnis. Dolorum dolores nobis alias. </div>
-					<div class="sec9Comment_person">
-						<div class="sec9Comment_person_avatar">
+					<div class="customerReview__person">
+						<div class="customerReview__avatar">
 							<img src="imgs/sec9Avatar2.png" alt="avatar">
 						</div>
-						<p class="sec9Comment_person_name">Jogn Scott <span>The Fringe</span></p>
+						<p class="customerReview__name">Jogn Scott <span>The Fringe</span></p>
 					</div>
 				</div>
 			</div>
-			<div class="sec9Form" id="contact">
-				<div class="sec9Form_title">
+			<div class="contactForm sectionContacts__contactForm" id="contact">
+				<div class="contactForm__title">
 					Contacts
-					<p>Sing up for newsletter to receive updates</p>
+					<p class="contactForm__subtitle">Sing up for newsletter to receive updates</p>
 				</div>
-				<input type="text" name="name" placeholder="Name" class="sec9Form_inpName">
-				<input type="number" name="phone" placeholder="Phone" class="sec9Form_inpPhone">
-				<input type="text" name="email" placeholder="E-mail" class="sec9Form_inpEmail">
-				<a href="#dd" class="sec9Form_btn">send</a>
+				<input type="text" name="name" placeholder="Name" class="contactForm__inp">
+				<input type="number" name="phone" placeholder="Phone" class="contactForm__inp">
+				<input type="text" name="email" placeholder="E-mail" class="contactForm__inp">
+				<a href="#dd" class="mainBtn contactForm__btn">send</a>
 			</div>
 		</div>
 	</section>
 
-	<footer>
-		<div class="container">
-			<div class="footerWrap">
-				<div class="copyright">All rights reserved</div>
-				<div class="footerIcons">
-					<svg class="footerIcon footerIcon-twitter">
-						<use xlink:href="svgSprite/sprite.svg#017-twitter"></use>
-					</svg>
-					<svg class="footerIcon footerIcon-facebook">
-						<use xlink:href="svgSprite/sprite.svg#015-facebook"></use>
-					</svg>
-					<svg class="footerIcon footerIcon-vk">
-						<use xlink:href="svgSprite/sprite.svg#016-vk"></use>
-					</svg>
-				</div>
-				<div class="footerNumber">+7 998 939 64 66</div>
+	<footer class="footer">
+		<div class="container footer__wrap">
+			<div class="footer__copyright">All rights reserved</div>
+			<div class="footer__icons">
+				<svg class="footer__icon icon-twitter">
+					<use xlink:href="svgSprite/sprite.svg#017-twitter"></use>
+				</svg>
+				<svg class="footer__icon icon-facebook">
+					<use xlink:href="svgSprite/sprite.svg#015-facebook"></use>
+				</svg>
+				<svg class="footer__icon icon-vk">
+					<use xlink:href="svgSprite/sprite.svg#016-vk"></use>
+				</svg>
 			</div>
+			<div class="footer__number">+7 998 939 64 66</div>
 		</div>
 	</footer>
 	<script src="js/index.js"></script>

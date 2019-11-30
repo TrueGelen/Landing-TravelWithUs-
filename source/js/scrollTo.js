@@ -1,8 +1,8 @@
 window.addEventListener('load', function () {
 
 	//getting link elements
-	let navLinks = window.document.querySelectorAll('header .container .navWrapper .logoNavWrap .nav a')
-	let btnorderNow = window.document.querySelector('header .container .headerTitleWrapper .headerBtn')
+	let navLinks = window.document.querySelectorAll('header .container .header__navWrap .header__logoAndMenuWrap .navigation .navigation__link')
+	let btnorderNow = window.document.querySelector('header .container .header__contentWrap .header__mainBtn')
 	let links = [...navLinks, btnorderNow]
 
 	//get id then get element to which we need to go and set listeners on click

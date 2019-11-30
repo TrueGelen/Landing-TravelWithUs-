@@ -1,9 +1,9 @@
 $(window).on('load', (function () {
 	console.log("script from responsiveMenu is working")
 
-	let btn = $('header .container .headerTitleWrapper .headerBtn')
-	let mobMenu = $('header .container .navWrapper .navMob')
-	let nav = $('header .container .navWrapper .logoNavWrap .nav')
+	let btn = $('.header .container .header__contentWrap .header__mainBtn')
+	let mobMenu = $('.header .container .header__navWrap .mobileNav')
+	let nav = $('header .container .header__navWrap .header__logoAndMenuWrap .navigation')
 
 	mobMenu.click(function () {
 		nav.fadeToggle(function () {
